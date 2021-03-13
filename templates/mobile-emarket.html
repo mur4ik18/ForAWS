@@ -1,0 +1,124 @@
+{% extends "mobile-home.html" %}
+{% block content %}
+{% load staticfiles %}
+<div id="first" class="conatiner">
+	<center>
+		<h1 class="bigtitles">e-market</h1>
+	</center>
+	<ul class="honest-ul">
+		<center>
+			<li class="listspace">
+				<a href="/mobile/emarket/mostrecent/#m">
+					<img id="emen" width="300px" src="{% static "img/icons/e_market/men.svg" %}">
+					<p class="biggertext" for="emen">men</p>
+				</a>
+			</li>
+			<li class="listspace">
+				<a href="/mobile/emarket/mostrecent/#w">
+					<img id="ewomen" width="300px" src="{% static "img/icons/e_market/women.svg" %}">
+					<p class="biggertext" for="ewomen">women</p>
+				</a>
+			</li>
+		</center>
+	</ul>
+</div>
+<div class="selectionbox hidden">
+	<center>
+		<h1 id="current"></h1>
+	</center>
+	<div class="otherbox gray-bg">
+		<ul class="scrollbar mwchoose">
+			<li class="ico mancircle ecircle">
+				<center>
+				<img id="mc" width="110px" src="{% static "img/icons/e_market/men.svg" %}">
+				<br>
+				<label class="mw" for="mc">men</label>
+				</center>
+			</li>
+			<li class="ico womancircle ecircle">
+				<center>
+				<img id="wc" width="110px" src="{% static "img/icons/e_market/women.svg" %}">
+				<br>
+				<label class="mw" for="wc">women</label>
+				</center>
+			</li>
+		</ul>
+	</div>
+	<div class="typeselector gray-bg">
+	<center>
+		<!--<select class="selector">
+			<option name="dresses" value="dresses"><img src="{% static "img/icons/e_market/women.svg" %}">dresses</option>
+			<option name="shits" value="shirts">shirts</option>
+		</select>-->
+		<!--custom selector-->
+		<div class="drop">
+			<table class="dropdisplay">
+				<tr>
+					<td>
+						<center>
+						<img height="60px" src="{% static "img/icons/e_market/women.svg" %}">
+						</center>
+					</td>
+					<td>
+						<center>
+						<h2 class="curname">dresses</h2>
+						</center>
+					</td>
+					<td>
+						<center>
+						<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+						</center>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="options">
+			<ul>
+				<!--let django populate this with a for each -->
+				<!--only a demo -->
+				<li class="selectable">
+					<img src="{% static "img/icons/e_market/women.svg" %}">
+					<h2 class="name">shirts</h2>
+					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+				</li>
+				<li class="selectable">
+					<img src="{% static "img/icons/e_market/women.svg" %}">
+					<h2 class="name">dresses</h2>
+					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+				</li>
+		</div>
+	</center>
+	</div>
+</div>
+<div id="second" class="hidden">
+	<div class="most_recent">
+		<div class="titlebox">
+			<center>
+			<h1 class="largertext">most recent</h1>
+			</center>
+		</div>
+		<!--django for each for every dress-->
+		<!-- may dynamically create based on selection box using jquery -->
+		<div class="dressbox">
+			<div class="infobox">
+				<img width="110px" class="gicon" src="{% static "img/icons/e_market/women.svg" %}">
+				<div class="info">
+					<!-- dress name -->
+					<h3 class="mediumtext bold">dress</h3>
+					<!-- dress price | currency -->
+					<h4 class="dressprice">$$$$$</h4>
+				</div>
+			</div>
+			<div class="imagebox">
+				<!-- django insert respective name -->
+				<center>
+				<img style="padding-top: 200px;" src="{% static "img/icons/head.png" %}">
+				</center>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block footer %}
+{% include 'mobile-nav-minimized.html' %}
+{% endblock %}

@@ -1,0 +1,24 @@
+<div id="carousel-{{ lightbox.data.id }}"
+    class="carousel slide"
+    data-ride="carousel"
+    data-interval="false">
+  <div class="carousel-inner" role="listbox">
+    <div class="item image"
+        ng-repeat="image in lightbox.data.images"
+        ng-class="{active: $first}">
+
+      <div class="img-table">
+        <div carousel-zoom-img image="image"></div>
+      </div>
+
+      <div class="carousel-caption">{{ image.image.caption }}</div>
+    </div>
+  </div>
+
+  <a class="left carousel-control"
+      href="#carousel-{{ lightbox.data.id }}"
+      role="button" data-slide="prev"></a>
+  <a class="right carousel-control"
+    href="#carousel-{{ lightbox.data.id }}"
+    role="button" data-slide="next"></a>
+</div>

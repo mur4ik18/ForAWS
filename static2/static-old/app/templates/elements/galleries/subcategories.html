@@ -1,0 +1,12 @@
+<div class="r big effect" ng-repeat="subcategory in ctrl.PAGES">
+  <div class="o"></div>
+  <div class="c1"></div>
+  <div class="c2"></div>
+  <div class="rev">
+    <a ng-href="/galleries/{{ ctrl.category }}/{{ subcategory }}"
+        ng-mouseover="ctrl.onMouseover(subcategory);"
+        ng-mouseout="ctrl.onMouseout();">
+      <img ng-src="{{ STATIC_URL }}img/icons/galleries/{{ subcategory }}.svg" alt="{{ subcategory }}">
+    </a>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="socialbar">
+  <a href="#" class="tw"></a>
+  <a href="#" class="fb"></a>
+  <a href="#" class="pi"></a>
+  <a href="#" class="em"></a>
+</div>
+<div class="tagbar">
+  <a href ng-repeat="tag in data.tags">#{{ tag }}</a>
+</div>
+
+<div class="media">
+  <div ng-if="data.category == 'see'">
+    <img ng-src="{{ data.cropping }}" alt="{{ data.title }}">
+  </div>
+  <div ng-if="data.category == 'watch'">
+    <media-video link="data.video" height="300px"></media-video>
+  </div>
+  <div ng-if="data.category == 'listen'">
+    <media-audio link="data.audio"></media-audio>
+  </div>
+</div>
+
+<h3>{{ data.title }}</h3>
+
+<div ng-bind-html="data.short_description"></div>

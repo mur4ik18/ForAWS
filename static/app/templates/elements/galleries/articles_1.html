@@ -1,0 +1,10 @@
+<div class="r effect"
+    ng-repeat="a in ctrl.articleLists[1]">
+  <div class="o"></div>
+  <div class="c1"></div><div class="c2"></div>
+  <a href class="rev" data-toggle="tooltip" title="{{ a.title }}" data-container="body"
+      ng-class="{purple: a.id == ctrl.article.id}"
+      ng-click="ctrl.jump(a);">
+    <img ng-src="{{ STATIC_URL }}img/icons/galleries/{{ a.category }}_s.svg" alt="{{ a.title }}">
+  </a>
+</div>

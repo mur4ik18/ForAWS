@@ -1,0 +1,21 @@
+<div class="socialbar">
+  <a href="#" class="tw"></a>
+  <a href="#" class="fb"></a>
+  <a href="#" class="pi"></a>
+  <a href="#" class="em"></a>
+</div>
+<div class="tagbar">
+  <a href ng-repeat="tag in data.tags">#{{ tag }}</a>
+</div>
+
+<h3>{{ data.title }}</h3>
+<div class="date">{{ data.datetime | date: 'MMMM d' | lowercase }}</div>
+<div class="time">{{ data.datetime | date: 'h a' | lowercase }}</div>
+<div class="location">@{{ data.location }}</div>
+<p class="address">
+  {{ data.address }}
+</p>
+
+<p class="short-info">
+  {{ data.caption }}
+</p>

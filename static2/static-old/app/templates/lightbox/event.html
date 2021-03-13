@@ -1,0 +1,31 @@
+<div class="icon">
+  <i class="{{ lightbox.data.month.image }}"></i>
+  {{ lightbox.data.month.image }}
+</div>
+<div class="socialbar">
+  <a href="#" class="tw"></a>
+  <a href="#" class="fb"></a>
+  <a href="#" class="pi"></a>
+  <a href="#" class="em"></a>
+</div>
+  <div class="tagbar">
+    <a href ng-repeat="tag in lightbox.data.event.tags">#{{ tag }}</a>
+  </div>
+
+<h2>{{ lightbox.data.event.title }}</h2>
+<div class="date">{{ lightbox.data.event.datetime | date: 'MMMM d ha' | lowercase }}</div>
+<p class="address">
+  @{{ lightbox.data.event.location }},
+  {{ lightbox.data.event.address }}
+</p>
+
+<div class="slide-content">
+  <ng-include src="'events/carousel.html'" onload="lightboxCtrl.carousel()"></ng-include>
+
+  <div>
+    <div class="caption">
+      caption: {{ lightbox.data.event.caption }}
+    </div>
+    <div class="info" ng-bind-html="lightbox.data.event.content"></div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="others">
+  <a ng-repeat="c in legend.data.CATEGORIES" ng-if="c != legend.data.category"
+    ng-href="/galleries/{{ c }}">
+    <img ng-src="{{ STATIC_URL }}img/icons/galleries/{{ c }}_s.svg" alt="{{ c }}">
+    {{ c }}
+  </a>
+</div>
+<h1 class="title">
+  <img ng-src="{{ STATIC_URL }}img/icons/galleries/{{ legend.data.category }}_s.svg"
+      alt="{{ legend.data.category }}">
+  {{ legend.data.category }}
+</h1>
+<div ng-controller="ArticleSearchController as ctrl">
+  <div id="search">
+    <input type="text" placeholder="Search here ..."
+        ng-model="query" ng-model-options="{debounce: 500}">
+    <button type="submit" class='i'>
+      <img ng-src="{{ STATIC_URL }}img/search_w.png" alt="Search">
+    </button>
+  </div>
+
+  <div class="search-results" ng-show="query || ctrl.results">
+    <p ng-show="!ctrl.results.$resolved">Searching ...</p>
+    <ul ng-show="ctrl.results.$resolved">
+      <li ng-repeat="article in ctrl.results">
+        <a ng-href="/galleries/{{ article.category }}/{{ article.subcategory }}?article={{ article.id }}" >{{ article.title }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="date-selection" ng-class="{vh: ctrl.results}">
+    <div class="info"><strong>explore</strong></div>
+
+    <ul class="subs">
+      <li ng-repeat="subcategory in legend.data.SUBCATEGORIES" ng-if="subcategory != 'whateva'">
+        <a ng-href="/galleries/{{ legend.data.category }}/{{ subcategory }}">
+          <img ng-src="{{ STATIC_URL }}img/icons/galleries/{{ subcategory }}.svg"
+            alt="{{ subcategory }}"
+            ng-class="{purple: legend.data.subcategory == subcategory}">
+          {{ subcategory }}
+        </a>
+      </li>
+      <li class="empty"></li>
+      <li class="whateva">
+        <a ng-href="/galleries/{{ legend.data.category }}/whateva">
+          <img ng-src="{{ STATIC_URL }}img/icons/galleries/whateva.svg"
+            alt="Whateva"
+            ng-class="{purple: !legend.data.subcategory}">
+          whateva
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<order-select selected="legend.data.order"></order-select>

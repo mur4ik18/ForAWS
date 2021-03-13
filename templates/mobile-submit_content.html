@@ -1,0 +1,29 @@
+{% extends "mobile-home.html" %}
+{% block content %}
+<div class="signup form_submit-content">
+<center>
+	<h1 class="title">submit content</h1>
+	<form method="POST" action="./">
+		{% csrf_token %}
+		<label for="input_name">full name</label>
+		<br>
+		<input class="input_txt" id="input_name" type="text" name="name">
+		<br>
+		<label for="input_email">email address</label>
+		<br>
+		<input class="input_txt" id="input_email" type="email" name="email">
+		<br>
+		<label for="input_web">web addresses</label>
+		<br>
+		<input class="input_txt" id="input_web" type="text" name="web">
+		<br>
+		<label for="input_about">tell us about you</label>
+		<br>
+		<textarea placeholder="Tell us about you in 240 characters or less!" rows="8" class="input_txt" id="input_about" type="textarea" name="text" maxlength="240"></textarea>
+		<br>
+		<input class="input_btn" id="input_submit" type="submit" value="reach us!">
+		<br>
+	</form>
+</center>
+</div>
+{% endblock %}

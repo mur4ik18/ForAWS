@@ -1,0 +1,41 @@
+<m-circle ctrl="ctrl"
+  angle="1.57079633"
+  elements="elements/users/account.html">
+
+  <h1>login/register</h1>
+
+  <div class="links">
+    <p>are you ...</p>
+    <a href="#" class="btn" ng-class="{active: ctrl.type == 0}"
+      ng-click="ctrl.type = 0;">returning?</a>
+    <a href="#" class="btn" ng-class="{active: ctrl.type == 1}"
+      ng-click="ctrl.type = 1;">new?</a>
+  </div>
+
+  <form name="userForm">
+    <div class="form-group"
+        ng-class="{'has-error': userForm.email.$dirty && userForm.email.$invalid}">
+      <label>email address</label>
+      <input type="email" name="email" ng-model="ctrl.user.email"
+        required>
+    </div>
+    <div class="form-group"
+        ng-class="{'has-error': userForm.password.$dirty && userForm.password.$invalid}">
+      <label>password</label>
+      <input type="password" name="password" ng-model="ctrl.user.password"
+        required>
+    </div>
+    <div class="text-danger" ng-show="ctrl.error">{{ ctrl.error }}</div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn left"
+        ng-click="ctrl.continue();"
+        ng-disabled="userForm.$invalid || userForm.$pending">
+        <span ng-show="ctrl.loading">loading...</span>
+        <span ng-hide="ctrl.loading">continue</span>
+      </button>
+      <a href="#" class="forgot">forgot your password?</a>
+    </div>
+  </form>
+
+</m-circle>

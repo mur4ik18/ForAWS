@@ -1,0 +1,11 @@
+<div class="r effect" ng-repeat="day in ctrl.list2">
+  <div class="o"></div>
+  <div class="c1"></div><div class="c2"></div>
+  <div class="rev day" ng-show="!day.title"
+      ng-class="{purple: day == ctrl.eventDate.getDate()}">
+    <span ng-if="day <= ctrl.daysInMonth">{{ day }}</span>
+  </div>
+  <a href ng-show="day.title" class="purple">
+    <img ng-src="{{ STATIC_URL }}img/icons/events/{{ day.image }}_s.svg" alt="{{ day.title }}">
+  </a>
+</div>

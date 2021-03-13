@@ -1,0 +1,18 @@
+{% extends "base_circle.html" %}
+{% load static %}
+
+{% block body_id %}signup{% endblock body_id %}
+{% block body_class %}ty{% endblock body_class %}
+
+{% block main_class %}reverse v{% endblock main_class %}
+
+{% block circle_padding %}350{% endblock circle_padding %}
+
+{% block circle_extra %}<a href="#" class="close"></a>{% endblock circle_extra %}
+
+{% block circle_content %}
+  <div class="icon">
+    <img src="{% static "img/icons/head.png" %}" alt="">
+  </div>
+  <p>thank you</p>
+{% endblock circle_content %}

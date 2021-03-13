@@ -1,0 +1,48 @@
+{% extends "base_circle.html" %}
+{% load static %}
+
+{% block body_id %}mo-news{% endblock body_id %}
+
+{% block main_class %}reverse{% endblock main_class %}
+
+{% block circle_padding %}350{% endblock circle_padding %}
+
+{% block circle_extra %}<a href="#" class="close"></a>{% endblock circle_extra %}
+
+{% block circle_content %}
+  <div class="news-icon">
+    <img src="{% static "img/icons/base/reach_us_simple_gray.svg" %}" alt="Mo News" class="icon icon-bg-gray">
+    contact
+  </div>
+  <h1>submit content</h1>
+
+  <form action="">
+    <div class="row">
+      <div class="form-group col-sm-6 col-sm-offset-3">
+        <label>full name</label>
+        <input type="text">
+      </div>
+      <div class="form-group col-sm-6">
+        <label>email</label>
+        <input type="text">
+      </div>
+      <div class="form-group col-sm-6">
+        <label>
+          web addresses:
+          <span>blog</span>
+          <span><img src="{% static "img/icons/twitter_mag.png" %}" alt=""></span>
+          <span><img src="{% static "img/icons/facebook_mag.png" %}" alt=""></span>
+          <span><img src="{% static "img/icons/instagram_mov.png" %}" alt=""></span>
+        </label>
+        <input type="text" placeholder="separated by a comma">
+      </div>
+      <div class="form-group col-sm-6 col-sm-offset-3">
+        <label for="">tell us about you</label>
+        <textarea placeholder="message with 240 character count" rows="2"></textarea>
+      </div>
+    </div>
+    <div class="form-actions bottom">
+      <input type="submit" value="reach us!" class="btn">
+    </div>
+  </form>
+{% endblock circle_content %}

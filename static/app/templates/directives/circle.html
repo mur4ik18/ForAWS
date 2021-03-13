@@ -1,0 +1,15 @@
+<div class="circle first {{ circleClass }}"
+    data-angle="{{ angle }}"
+    data-padding="{{ padding }}"
+    data-v-padding="{{ vPadding }}"
+    data-legend="{{ legend }}">
+
+  <ng-include src="elements" onload="recircle()"></ng-include>
+
+  <div class="content">
+    <div class="circle-container">
+        <ng-transclude></ng-transclude>
+    </div>
+  </div>
+  <ng-include src="extra" ng-if="extra"></ng-include>
+</div>

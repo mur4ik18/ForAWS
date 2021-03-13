@@ -1,0 +1,53 @@
+{% extends "base_circle.html" %}
+
+{% block body_id %}checkout{% endblock body_id %}
+
+{% block circle_angle %}1.5707963268{% endblock circle_angle %}
+
+{% block circle_elements %}
+  <div class="r active hvr-pop">
+    <div class="o"></div>
+    <div class="c">1</div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="c">2</div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="c">3</div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="c">4</div>
+  </div>
+{% endblock circle_elements %}
+
+{% block circle_content %}
+  <h1>checkout</h1>
+
+  <div class="links">
+    <p>are you ...</p>
+    <a href="#" class="btn">returning?</a>
+    <a href="#" class="btn">new?</a>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label>email address</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>password</label>
+      <input type="password">
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> forgot your password?
+      </label>
+    </div>
+    <div class="form-actions">
+      <input type="submit" class="btn" value="continue">
+    </div>
+  </form>
+{% endblock circle_content %}

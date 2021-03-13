@@ -1,0 +1,67 @@
+<m-circle ctrl="ctrl">
+  <div id="view-cart">
+    <h1>
+      <img ng-src="{{ STATIC_URL }}img/icons/cart.png" alt="">
+      cart
+    </h1>
+
+    <div ng-show="ctrl.order.items.length > 0">
+      <div class="roller">
+        <div class="up"
+            ng-click="ctrl.rollerUp()">
+            <i class="glyphicon glyphicon-chevron-up"></i>
+        </div>
+        <div class="items">
+          <div class="item"
+              ng-repeat="item in ctrl.order.items"
+              ng-if="ctrl.rollerIndex == $index">
+            <a href ng-click="ctrl.removeItem();" class="remove-item"></a>
+            <div class="clearfix">
+              <div class="img-container">
+                <img src="{{ item.stock.image.url }}" alt="{{ item.stock.image.caption }}">
+              </div>
+              <div class="details">
+                <h3>{{ item.product.name }}</h3>
+                <p>{{ item.stock.color.name }}</p>
+                <p>size: {{ item.stock.size.name }}</p>
+                <p>qty: {{ item.quantity }}</p>
+                <p class="price">${{ item.price * item.quantity | number: 2 }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="down"
+            ng-click="ctrl.rollerDown()">
+            <i class="glyphicon glyphicon-chevron-down"></i>
+        </div>
+      </div>
+      <br>
+      <form ng-hide="ctrl.order.voucher && !ctrl.forceCoupon">
+        <div class="input-group discount">
+          <label for="">discount code</label><br>
+          <input type="text" name="coupon" ng-model="ctrl.coupon"><button class="btn" type="button"
+              ng-click="ctrl.applyCoupon()">apply</button>
+        </div>
+        <div class="error-message text-danger" ng-show="ctrl.couponErr">{{ ctrl.couponErr }}</div>
+      </form>
+
+      <div class="order-summary" ng-show="ctrl.order.voucher && !ctrl.forceCoupon">
+        <p class="discount">
+          -${{ ctrl.order.discount | number: 2 }} discount
+          coupon: {{ ctrl.order.voucher.name }}
+          - <a href
+              ng-click="ctrl.coupon = ctrl.order.voucher.code; ctrl.forceCoupon = true;">change</a>
+        </p>
+      </div>
+    </div>
+    <div ng-show="ctrl.order.items.length == 0" class="empty">
+      your cart is empty
+    </div>
+
+    <div class="options">
+      <a href="/e-market" ng-click="legend.data.hideCart()">continue shopping</a>
+      <a href="/checkout" ng-show="ctrl.order.items.length > 0">checkout</a>
+    </div>
+  </div>
+
+</m-circle>

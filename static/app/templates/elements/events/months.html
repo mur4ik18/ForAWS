@@ -1,0 +1,11 @@
+<div class="r big effect" ng-repeat="month in ctrl.MONTHS">
+  <div class="o"></div>
+  <div class="c1"></div><div class="c2"></div>
+  <div class="rev">
+    <a ng-href="/human-garden/{{ $index + 1 }}" class="icon hover"
+        ng-mouseover="ctrl.onMouseover(month)"
+        ng-mouseout="ctrl.onMouseout(month);">
+      <img ng-src="{{ STATIC_URL }}img/icons/events/{{ month.image }}.svg" alt="{{ month.title }}">
+    </a>
+  </div>
+</div>

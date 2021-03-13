@@ -1,0 +1,16 @@
+Your order has been received. Below are your order details:
+
+Items:
+{% for item in order.items.all %}
+  {{ item.stock }} (${{ item.product.price|floatformat:2 }})
+{% endfor %}
+
+Subtotal: ${{ order.subtotal|floatformat:2 }}
+{% if order.voucher %}
+  Discount: ${{ order.discount|floatformat:2 }} ({{ order.voucher.name }})
+{% endif %}
+
+Tax: ${{ order.tax|floatformat:2 }}
+Shipping: ${{ order.shipping|floatformat:2 }}
+
+Total: ${{ order.total|floatformat:2 }}

@@ -1,0 +1,73 @@
+<m-circle ctrl="ctrl"
+  angle="{{ ctrl.angle }}"
+  elements="elements/orders/steps.html">
+
+  <h1>shipping</h1>
+
+  <form name="f">
+    <div class="form-group"
+        ng-class="{'has-error': f.fullName.$dirty && f.fullName.$invalid}">
+      <label>full name</label>
+      <input type="text" name="fullName" ng-model="ctrl.order.shipping_full_name"
+        required>
+    </div>
+
+    <div class="form-group"
+        ng-class="{'has-error': f.address.$dirty && f.address.$invalid}">
+      <label>address</label>
+      <input type="text" name="address" ng-model="ctrl.order.shipping_address"
+        required>
+    </div>
+
+    <div class="split-location">
+      <div class="form-group"
+          ng-class="{'has-error': f.city.$dirty && f.city.$invalid}">
+        <label>city</label>
+        <input type="text" name="city" ng-model="ctrl.order.shipping_city"
+          required>
+      </div>
+      <div class="form-group"
+          ng-class="{'has-error': f.state.$dirty && f.state.$invalid}">
+        <label>state</label>
+        <input type="text" name="state" ng-model="ctrl.order.shipping_state"
+          required>
+      </div>
+      <div class="form-group"
+          ng-class="{'has-error': f.zip.$dirty && f.zip.$invalid}">
+        <label>zip</label>
+        <input type="text" name="zip" ng-model="ctrl.order.shipping_zip"
+          required>
+      </div>
+    </div>
+    <div class="form-group"
+        ng-class="{'has-error': f.country.$dirty && f.country.$invalid}">
+      <label>country</label>
+      <mf-select name="country"  ng-model="ctrl.order.shipping_country"
+        options="ctrl.countries"
+        empty="Select country"
+        required>
+    </div>
+
+    <div class="form-group"
+        ng-class="{'has-error': f.shippingMethod.$dirty && f.shippingMethod.$invalid}">
+      <label>shipping method</label>
+      <mf-select name="shippingMethod"  ng-model="ctrl.order.shipping_method"
+        options="ctrl.shippingMethods"
+        empty="Select shipping method"
+        required>
+    </div>
+
+    <div class="text-danger" ng-show="error">{{ error }}</div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn left"
+        ng-click="ctrl.continue();"
+        ng-disabled="f.$invalid || f.$pending">
+        <span ng-show="ctrl.loading">loading...</span>
+        <span ng-hide="ctrl.loading">continue</span>
+      </button>
+    </div>
+  </form>
+
+</m-circle>
+

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+  <div class="view">
+    <div class="circle"
+        data-angle="{% block circle_angle %}0{% endblock circle_angle %}"
+        data-padding="{% block circle_padding %}350{% endblock circle_padding %}"
+        data-v-padding="{% block circle_v_padding %}150{% endblock circle_v_padding %}"
+        data-legend="{% block circle_legend %}false{% endblock circle_legend %}"
+        {% block circle_attrs %}{% endblock circle_attrs %}>
+      {% block circle_elements %}{% endblock circle_elements %}
+      <div class="content">
+        <div class="scrollable-holder">
+          <div class="scrollable">
+            {% block circle_content %}{% endblock circle_content %}
+          </div>
+        </div>
+      </div>
+
+      {% block circle_extra %}{% endblock circle_extra %}
+    </div>
+  </div>
+{% endblock main_content %}

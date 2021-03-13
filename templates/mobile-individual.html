@@ -1,0 +1,68 @@
+{% extends "mobile-home.html" %}
+{% block content %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/mobile-individual.js' %}"></script>
+<div id="individualview">
+	<div class="indidisplay">
+		<div class="socialholder">
+			<ul class="honest-ul sideways">
+				<center>
+				<li class="biggertext iconspace"><a href="#"><i class="fa fa-twitter iconspace purplefont" aria-hidden="true"></i></a></li>
+        		<li class="biggertext iconspace"><a href="#"><i class="fa fa-facebook iconspace purplefont biggertext" aria-hidden="true"></i></a></li>
+        		<li class="biggertext iconspace"><a href="#"><i class="fa fa-pinterest-p iconspace purplefont biggertext" aria-hidden="true"></i></a></li>
+        		<li class="biggertext iconspace"><a href="#"><i class="fa fa-instagram iconspace purplefont biggertext" aria-hidden="true"></i></a></li>
+        		</center>
+			</ul>
+			<br>
+			<center>
+			<ul id="tags" class="inditags honest-ul sideways">
+       			<li>
+       				<span class="text purplefont">tag</span>
+       			</li>
+       			<li>
+       				<span class="text purplefont">|</span>
+       			</li>
+       			<li>
+       				<span class="text purplefont">tag</span>
+       			</li>
+       			<li>
+       				<span class="text purplefont">|</span>
+       			</li>
+       			<li>
+       				<span class="text purplefont">tag</span>
+       			</li>
+       			<li>
+       				<span class="text purplefont">|</span>
+       			</li>
+       			<li>
+       				<span class="text purplefont">tag</span>
+       			</li>
+       		</ul>
+       		</center>
+		</div>
+		<div class="prodinfo">
+		<center>
+			<!-- django inserts -->
+			<b><h1 id="title" class="biggertext" style="color: #4d4d4f;">Item Title</h1></b>
+			<!-- django inserts | currency -->
+			<h1 id="short" class="mediumtext" style="color: #4d4d4f;">Item Author</h1>
+		</div>
+		<center>
+		<div class="imagecontainer">
+			<img id="dirleft" class="direc" src="{% static 'img/scroll_left.svg' %}">
+			<img id="dirright" class="direc" src="{% static 'img/scroll_right.svg' %}">
+			<div id="media" style="height:100%;">
+			</div>
+		</div>
+		<div class="descriptionholder contenttext" style="overflow:scroll;">
+			<p id="description" class="mediumtext" style="color: #4d4d4f; word-break:break-all; overflow:scroll;">
+			</p>
+			</div>
+		</div>
+		</center>
+	</div>
+</div>
+{% endblock %}
+{% block footer %}
+{% include 'mobile-nav-minimized.html' %}
+{% endblock %}

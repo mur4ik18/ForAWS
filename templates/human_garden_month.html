@@ -1,0 +1,124 @@
+{% extends "base_3_circle.html" %}
+{% load static %}
+
+{% block body_id %}human_garden{% endblock body_id %}
+
+{% block main_class %}event{% endblock main_class %}
+
+{% block circle_legend %}true{% endblock circle_legend %}
+
+{% block circle_angle %}4.7123889804{% endblock circle_angle %}
+
+{% block circle_elements %}
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">1</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">3</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">5</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">7</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">9</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">11</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">13</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">15</div></div>
+<div class="r active">
+  <div class="o"></div>
+  <a href="#"><img src="{% static "img/icons/events/may_s.svg" %}" alt=""></a>
+</div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">18</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">20</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">22</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">24</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">26</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">28</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="rev day">30</div></div>
+{% endblock circle_elements %}
+
+{% block circle_2_angle %}4.9193889804{% endblock circle_2_angle %}
+{% block circle_2_elements %}
+<div class="r hvr-pop"><div class="o"></div><div class="day">2</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">4</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">6</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">8</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">10</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">12</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">14</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">16</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">17</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">19</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">21</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">23</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">25</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">27</div></div>
+<div class="r hvr-pop active"><div class="o"></div><div class="day">29</div></div>
+<div class="r hvr-pop"><div class="o"></div><div class="day">31</div></div>
+{% endblock circle_2_elements %}
+
+{% block circle_3_extra %}
+  <a class="scroll-left"></a>
+  <a class="scroll-right"></a>
+  <div class="top">
+    <div class="icon"><img src="{% static "img/icons/events/may_s_simple_gray.svg" %}" alt=""></div>
+  </div>
+  <div class="bottom">
+    <a href="#" class="read-more">read more &gt;</a>
+  </div>
+{% endblock circle_3_extra %}
+
+{% block content_circle_class %}w{% endblock content_circle_class %}
+
+{% block circle_content %}
+  <div class="socialbar">
+    <a href="#"><img src="{% static "img/twitter.png" %}" alt=""></a>
+    <a href="#"><img src="{% static "img/facebook.png" %}" alt=""></a>
+    <a href="#"><img src="{% static "img/pinterest.png" %}" alt=""></a>
+    <a href="#"><img src="{% static "img/email.png" %}" alt=""></a>
+  </div>
+  <div class="tagbar">
+    <a href="#">#holdands</a>
+    <a href="#">#energy</a>
+    <a href="#">#flamingopark</a>
+  </div>
+
+  <h3>hold hands</h3>
+  <div class="date">may 29</div>
+  <div class="time">7 mp</div>
+  <div class="location">@flamingopark</div>
+  <p class="address">
+    michigan avenue<br>
+    miami beach, fl 33139
+  </p>
+
+  <p class="short-info">
+    human garden invites you to hold hands.<br>
+    create a circle of energy,<br>
+    a special flow<br>of human power.
+  </p>
+{% endblock circle_content %}
+
+
+{% block legend %}
+  <h1 class="title">human garden</h1>
+  <div id="search">
+    <input type="text" placeholder="Search here ...">
+    <button type="submit" class='i'>
+      <img src="{% static "img/search_w.png" %}" alt="Search">
+    </button>
+  </div>
+
+  <div class="info"><strong>pick a month</strong></div>
+
+  <ul class="months">
+    <li><a href="#"><img src="{% static "img/icons/events/jan_s.svg" %}" alt="">jan</a></li>
+    <li><a href="#"><img src="{% static "img/icons/events/feb_s.svg" %}" alt="">feb</a></li>
+    <li><a href="#"><img src="{% static "img/icons/events/mar_s.svg" %}" alt="">mar</a></li>
+    <li><a href="#"><img src="{% static "img/icons/events/apr_s.svg" %}" alt="">apr</a></li>
+    <li><a href="#" class="active"><img src="{% static "img/icons/events/may_s.svg" %}" alt="">may</a></li>
+    <li><a href="#"><img src="{% static "img/icons/events/jun_s.svg" %}" alt="">jun</a></li>
+    <li><a href="#"><img src="{% static "img/icons/events/jul_s.svg" %}" alt="">jul</a></li>
+    <li><a href="#"><img src="{% static "img/icons/events/aug_s.svg" %}" alt="">aug</a></li>
+    <li><a href="#"><img src="{% static "img/icons/events/sept_s.svg" %}" alt="">sept</a></li>
+    <li><a href="#"><img src="{% static "img/icons/events/oct_s.svg" %}" alt="">oct</a></li>
+    <li><a href="#"><img src="{% static "img/icons/events/nov_s.svg" %}" alt="">nov</a></li>
+    <li><a href="#"><img src="{% static "img/icons/events/dec_s.svg" %}" alt="">dec</a></li>
+  </ul>
+
+  <div class="mf-select">year</div>
+{% endblock legend %}

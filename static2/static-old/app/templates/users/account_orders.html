@@ -1,0 +1,17 @@
+<m-circle ctrl="ctrl"
+  angle="{{ ctrl.angle }}"
+  elements="elements/users/account.html"
+  extra="extra/users/orders.html">
+
+
+  <m-circle-slides ctrl="ctrl" ng-if="ctrl.order"
+    template="users/order_slide.html"
+    on-slide-finish="ctrl.setOrder(data);"
+    on-animation-start="ctrl.animated = true;"
+    on-animation-end="ctrl.animated = false;"></m-circle-slides>
+
+  <div class="not-found" ng-if="!ctrl.order">
+    You have no orders.
+  </div>
+
+</m-circle>

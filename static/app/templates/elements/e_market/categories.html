@@ -1,0 +1,24 @@
+<div class="r big effect" ng-if="ctrl.showIcon">
+  <div class="o"></div>
+  <div class="c1"></div>
+  <div class="c2"></div>
+  <div class="rev">
+    <a ng-href="/e-market" class="icon big border ripple icon-c"></a>
+  </div>
+</div>
+
+
+<div ng-repeat="c in ctrl.CATEGORIES">
+  <div class="r big effect">
+    <div class="o"></div>
+    <div class="c1"></div><div class="c2"></div>
+    <div class="rev">
+      <a ng-href="{{ c.getLink() }}" class="icon hover"
+          ng-mouseover="ctrl.onMouseover(c)"
+          ng-mouseout="ctrl.onMouseout();">
+        <img ng-src="{{ STATIC_URL }}img/icons/e_market/{{ c.icon }}.svg" alt="{{ c.name }}">
+      </a>
+    </div>
+  </div>
+  <div class="r" ng-if="ctrl.showIcon && ctrl.CATEGORIES.length == 2 && $first"></div>
+</div>

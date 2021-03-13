@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+	<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/master.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/mobile-master.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "fa/css/font-awesome.min.css" %}">
+	<script type="text/javascript" src="{% static 'js/mobile-master.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jscookie.js' %}"></script>
+	<script>
+function bgFix(){
+	var bg = jQuery("#bg1, #bg2");
+	jQuery(window).resize("resizeBackground");
+	function resizeBackground() {
+	    bg.height(jQuery(window).height() + 60);
+	}
+
+	$.ajax({
+		url: '/mobile/bg/',
+		success: function(res) {
+			bgImg(res);
+		}
+	})
+
+	function bgImg(res){
+		$('body').css('background-image', 'url(/media/' + res.image + ')');
+	}
+}
+$(document).ready(bgFix());
+	
+
+	</script>
+	<title>mofa</title>
+</head>
+<body style="background-attachment: fixed; padding-bottom: 300em; margin-bottom: 300em;">
+	<div id="nav">
+		<div class="container">
+			<span id="ham" class="glyphicon glyphicon-menu-hamburger whitefont" style="float: left;" aria-hidden="true"></span>
+			<a href="/mobile/preview/"><img id="cart" src="{% static 'img/cart.png' %}" width="60em" class="whitefont" style="float: right; padding-top:2em;"></a>
+			<center><a href="/mobile/"><img id="logo_gif" width="100px" height="100px" src="{% static "img/logo.gif" %}"/></a></center>
+		</div>
+	</div>
+	<div id="menu">
+		<img id="closer" style="color: purple; border-radius: 50%; background-color:purple;" src="{% static "img/icons/close.png" %}">
+		<center>
+		<ul>
+			<li style="padding-left: 50px;"><a href="#">About</a></li>
+			<li class="menu-line"></li>
+			<li><a href="/mobile/galleries/">Galleries</a></li>
+			<li><a href="/mobile/gallery/mostrecent/#read" class="subitem">read</a></li>
+			<li><a href="/mobile/gallery/mostrecent/#watch" class="subitem">watch</a></li>
+			<li><a href="/mobile/gallery/mostrecent/#see" class="subitem">see</a></li>
+			<li><a href="//mobile/gallery/mostrecent/#listen" class="subitem">listen</a></li>
+			<li class="menu-line"></li>
+			<li><a href="http://mofaemarket.com/">E-Market</a></li>
+			<li><a href="/mobile/emarket/mostrecent/#w" class="subitem">women</a></li>
+			<li><a href="/mobile/emarket/mostrecent/#m" class="subitem">men</a></li>
+			<li class="menu-line"></li>
+			<li><a href="/mobile/garden/">Events</a></li>
+		</ul>
+		<img id="hanger" width="110" height="110" src="{% static "img/icons/nav/bottom.svg" %}">
+		</center>
+	</div>
+	<div id="presentation" style="margin-bottom: 45em;">
+	{% block content %}
+	<center style="padding-bottom:50px">
+		<img width="300" src="{% static "img/icons/base/logo_centered.svg" %} ">
+	</center>
+	<div id="direct">
+		<ul class="honest-ul">
+			<center>
+			<li class="listspace">
+				<a href="./about/">
+					<img width="250" src="{% static "img/icons/base/about.svg" %}">
+				</a>
+				<p class="mediumtext">
+				about
+				</p>
+			</li>
+			<li class="listspace">
+				<a href="./gallery/">
+					<img width="250" src="{% static "img/icons/base/galleries.svg" %}">
+				</a>
+				<p class="mediumtext">
+				galleries
+				</p>
+			</li>
+			<li class="listspace">
+				<a href="./emarket/">
+					<img width="250" src="{% static "img/icons/base/e_market.svg" %}">
+				</a>
+				<p class="mediumtext">
+				e market
+				</p>
+			</li>
+			<li class="listspace">
+				<a href="./garden/">
+					<img width="250" src="{% static "img/icons/base/human_garden.svg" %}">
+				</a>
+				<p class="mediumtext">
+				events
+				</p>
+			</li>
+			</center>
+		</ul>
+	</div>
+	{% endblock %}
+	</div>
+	<div class="footerbox">
+	{% block footer %}
+	<div class="actions">
+		<center>
+			<ul class="gray-bg">
+				<li style="float: left;" class="pod">
+				  <a href="/mobile/submit-content/" class="smallertext">
+				    <img width="150" src="{% static "img/icons/base/reach_us.svg" %}" alt="reach_us">
+				    <p>
+				    join me
+				    </p>
+				  </a>
+				</li>
+				<li style="float: right;" class="pod">
+				  <a href="/mobile/mo-news/" class="smallertext">
+				    <img width="150" src="{% static "img/icons/base/mo_news.svg" %}" alt="mo_news">
+				    <p>
+				    mo-news
+				    </p>
+				  </a>
+				</li>
+			</ul>
+		</center>
+	</div>
+	<div class="social gray-bg">
+		<center>
+			<ul class="honest-ul smallicon">
+	        	<li><a href="#"><i class="fa fa-twitter socialspacelarge" aria-hidden="true"></i></a></li>
+	        	<li><a href="#"><i class="fa fa-facebook socialspacelarge" aria-hidden="true"></i></a></li>
+	        	<li><a href="#"><i class="fa fa-pinterest-p socialspacelarge" aria-hidden="true"></i></a></li>
+	        	<li><a href="#"><i class="fa fa-instagram socialspacelarge" aria-hidden="true"></i></a></li>
+	        	{# web: <li><a href="#"><img src="{% static "img/footer/web.png" %}" alt=""></a></li> #}
+	        </ul>
+	    </center>
+	</div>
+	{% endblock %}
+	</div>
+</body>
+</html>

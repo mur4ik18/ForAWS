@@ -1,0 +1,11 @@
+<div class="previous" ng-if="ctrl.previous">
+  <m-slide data="ctrl.previous" template="template"></m-slide>
+</div>
+
+<div class="current">
+  <m-slide data="ctrl.object" template="template" ctrl="ctrl"></m-slide>
+</div>
+
+<div class="next" ng-if="ctrl.next">
+  <m-slide data="ctrl.next" template="template"></m-slide>
+</div>

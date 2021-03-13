@@ -1,0 +1,268 @@
+{% extends 'mobile-home.html' %}
+{% block content %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/mobile-garden.js' %}"></script>
+<input id="csrf" type="hidden" name="csrf" value="{{ csrf_token }}">
+<div id="recentscroll">
+	<div id="currentsub">
+		<div id="imagehold">
+			<img width="100px" id="readimg" class="" src="/static/img/icons/head_white.png">
+		</div>
+		<h1 id="currenttext" class="texthold monthname">all</h1>
+	</div>
+</div>
+<!-- dropdown -->
+<div id="raindropdown" class="commonborder gray-bg">
+	<div id="dropdowncontainer">
+		<div id="rain">
+			<div id="bucket">
+				<table id="watertable">
+					<tr>
+						<td width="30%">
+						<center>
+							<div id="imageDrop" class="dropcontainer">
+							</div>
+						</center>
+						</td>
+						<td width="30%">
+							<div class="dropcontainer" style="text-align:center;">
+								<span id="currentdrop" class="mediumtext">categories</span>
+							</div>
+						</td>
+						<td width="30%">
+						<center>
+							<i id="directional" class="fa fa-angle-down" aria-hidden="true"></i>
+						</center>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<center>
+		<div id="pond">
+			<table id="residents" class="honest-ul">
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img width="45em" id="readimg" class="" src="/static/img/icons/head_white.png">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m0" class="droptext text droptext">all</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/jan_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m1" class="droplet text droptext">january</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/feb_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m2" class="droplet text droptext">february</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/mar_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m3" class="droplet text droptext">march</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/apr_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m4" class="droplet text droptext">april</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/may_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m5" class="droplet text droptext">may</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/jun_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m6" class="droplet text droptext">june</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/jul_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m7" class="droplet text droptext">july</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/aug_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m8" class="droplet text droptext">august</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/sep_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m9" class="droplet text droptext">september</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/oct_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m10" class="droplet text droptext">october</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr></a>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/nov_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m11" class="droplet text droptext">november</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr></a>
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/events/dec_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="m12" class="droplet text droptext">december</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<!-- insert other things here -->
+			</table>
+		</div>
+		</center>
+	</div>
+</div>
+<!-- dropdown end -->
+<div id="stable">
+	<center>
+	<h1 class="biggertext">most recent</h1>
+	</center>
+</div>
+<div id="viewshow">
+	<div id="events" class="">
+		<!--repeat each article -->
+		<!-- <div class="readarticle hidden">
+			<div class="creditbox commonborder">
+				<center>
+					<!title here 
+					<h1 class="mediumtext">article</h1>
+					<!caption?
+					<h4 class="text">taken by:</h4>
+				</center>
+			</div>
+			<div class="contentbox bottomborder">
+				<!content
+				<p class="contenttext">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+		-->
+	</div>
+</div>
+{% endblock %}
+{% block footer %}
+{% include 'mobile-nav-minimized.html' %}
+{% endblock %}

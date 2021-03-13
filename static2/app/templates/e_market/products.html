@@ -1,0 +1,20 @@
+<m-circle three="true" ctrl="ctrl"
+  angle="4.7123889804"
+  elements="elements/e_market/list_1.html"
+  s-angle="4.9193889804"
+  s-elements="elements/e_market/list_2.html"
+  legend="true"
+  extra="extra/e_market/products.html">
+
+  <m-circle-slides ctrl="ctrl" ng-if="ctrl.product"
+    template="e_market/slide.html"
+    on-slide-finish="ctrl.setProduct(data);"
+    on-animation-start="ctrl.animated = true;"
+    on-animation-end="ctrl.animated = false;"></m-circle-slides>
+
+  <div class="not-found" ng-if="!ctrl.products">
+    No products found.
+  </div>
+
+
+</m-circle>

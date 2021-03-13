@@ -1,0 +1,310 @@
+{% extends "mobile-home.html" %}
+{% block content %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/mobile-checkout.js' %}"></script>
+<input id="csrf" type="hidden" value="{{ csrf_token }}">
+<div class="checkout">
+	<center>
+		<h1 id="current">1 checkout</h1>
+		<div class="commonborder gray-bg">
+			<ul id="scrollbar">
+				<li id="c1" class="ico hidden">
+					<div class="areamaker">
+						<a href="#">
+							<h1 class="maru">1</h1>
+							<p class="subtext2">checkout</p>
+						</a>
+					</div>
+				</li>
+				<li id="c2" class="ico">
+					<div class="areamaker">
+						<a href="#">
+							<h1 class="maru">2</h1>
+							<p class="subtext2">shipping</p>
+						</a>
+					</div>
+				</li>
+				<li id="c3" class="ico">
+					<div class="areamaker">
+						<a href="#">
+							<h1 class="maru">3</h1>
+							<p class="subtext2">billing</p>
+						</a>
+					</div>
+				</li>
+				<li id="c4" class="ico">
+					<div class="areamaker">
+						<a href="#">
+							<h1 class="maru">4</h1>
+							<p class="subtext2">review</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="slideshow">
+		<form id="forms" action="#">
+			<div class="" id="1">
+				<h3>are you...</h3>
+				<ul>
+					<li class="csz ay"><button type="button" id="ret" class="rn">returning?</button></li>
+					<li class="csz ay"><button type="button" id="new" class="rn">new?</button></li>
+				</ul>
+				<label for="txt_email">email address</label>
+				<br>
+				<input id="txt_email" type="email" name="email">
+				<br>
+				<label for="txt_password">password</label>
+				<br>
+				<input id="txt_password" type="password" name="password">
+				<br>
+				<input style="width:50px;" id="chk_forgot" type="checkbox" name="forgot">
+				<label id="lbl_forgot" for="chk_forgot">forgot your password?</label>
+				<br>
+				<button type="button" id="cont1" class="input_btn">log in</button>
+			</div>
+			<div class="hidden" id="2">
+				<label for="txt_name">full name</label>
+				<br>
+				<input id="txt_name" type="text" name="name">
+				<br>
+				<label for="txt_address">address</label>
+				<br>
+				<input id="txt_address">
+				<br>
+				<ul>
+					<li class="csz">	
+						<label for="txt_city">city</label>
+						<br>
+						<input id="txt_city" type="text" name="city">
+					</li>	
+					<li class="csz">	
+						<label for="txt_state">state</label>
+						<br>
+						<input id="txt_state" type="text" name="state">
+					</li>
+					<li class="csz">
+						<label for="txt_zip">zip</label>
+						<br>
+						<input id="txt_zip" type="text" name="zip">
+					</li>
+				</ul>
+				<br>
+				<label for="txt_country">country</label>
+				<br>
+				<input id="txt_country" type="hidden" name="country">
+<!-- dropdown -->
+<div class="chkDrop">
+	<div id="dropdowncontainer">
+		<div id="rainCountry">
+			<div id="bucket">
+				<table id="watertable">
+					<tr>
+						<td width="30%">
+						<center>
+							<div id="imageDrop" class="dropcontainer">
+							</div>
+						</center>
+						</td>
+						<td width="30%">
+							<div class="dropcontainer" style="text-align:center;">
+								<span id="ctrycurrentdrop">country</span>
+							</div>
+						</td>
+						<td width="30%">
+						<center>
+							<i class="fa fa-angle-down chkDropArr text down-arrow-select" aria-hidden="true"></i>
+						</center>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<center>
+		<div id="pondCtry" class="chkPond">
+			<table id="ctryResidents" class="honest-ul">
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="droptext" class="droptext">United States</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+			</table>
+		</div>
+		</center>
+	</div>
+</div>
+<!-- dropdown end -->
+				<br>
+				<label for="drp_shipping">shipping method</label>
+				<br>
+				<input id="drp_shipping" type="hidden" name="shipping">
+<!-- dropdown -->
+<div class="chkDrop">
+	<div id="dropdowncontainer">
+		<div id="rainShip">
+			<div id="bucket">
+				<table id="watertable">
+					<tr>
+						<td width="30%">
+						<center>
+							<div id="imageDrop" class="dropcontainer">
+							</div>
+						</center>
+						</td>
+						<td width="30%">
+							<div class="dropcontainer" style="text-align:center;">
+								<span id="shipcurrentdrop">shipping</span>
+							</div>
+						</td>
+						<td width="30%">
+						<center>
+							<i class="fa fa-angle-down chkDropArr down-arrow-select" aria-hidden="true"></i>
+						</center>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<center>
+		<div id="pondShip" class="chkPond">
+			<table id="shipResidents" class="honest-ul">
+				<tr class="dropline">
+					<!-- <td class="droplet" width="30%">
+						<div class="dropcontainer">
+						</div>
+					</td> -->
+					<td class="thold" width="100%">
+						<div class="dropcontainer">
+							<span id="droptext" class="droptext">UPS Ground Shipping -- Free</span>
+						</div>
+					</td>
+					<!-- <td width="30%">
+					</td> -->
+				</tr>
+			</table>
+		</div>
+		</center>
+	</div>
+</div>
+<!-- dropdown end -->
+				<br>
+				<button type="button" id="cont2" class="continue input_btn">continue</button>
+			</div>
+			<div class="hidden" id="3">
+				<label for="txt_cardname">name on card</label>
+				<br>
+				<input id="txt_cardname" type="text" name="cardname">
+				<br>
+				<label for="txt_cardnumber">card number</label>
+				<br>
+				<input id="txt_cardnumber" type="number" name="cardnunber">
+				<br>
+				<div class="constrain">
+					<label id="expir">expiration</label>
+					<label id="cvv">cvv</label>
+				</div>
+				<br>
+				<br>
+				<ul>
+					<li class="csz">
+						<input id="txt_cardmonth" type="text" name="cardmonth">
+					</li>
+					<li class="csz">
+						<input id="txt_cardyear" type="text" name="cardyear">
+					</li>
+					<li class="csz">	
+						<input id="txt_cardcvv"type="password" name="cardcvv">
+					</li>
+				</ul>
+				<br>
+				<input style="width:50px;" id="chk_same_addr" type="checkbox" name="same_address" value="true">
+				<label for="chk_same_addr">same as shipping address</label>
+				<br>
+				<label for="txt_cardaddress">address</label>
+				<br>
+				<input id="txt_cardaddress">
+				<br>
+				<ul>
+					<li class="csz">	
+						<label for="txt_cardcity">city</label>
+						<br>
+						<input id="txt_cardcity" type="text" name="city">
+					</li>	
+					<li class="csz">	
+						<label for="txt_cardstate">state</label>
+						<br>
+						<input id="txt_cardstate" type="text" name="state">
+					</li>
+					<li class="csz">
+						<label for="txt_cardzip">zip</label>
+						<br>
+						<input id="txt_cardzip" type="text" name="zip">
+					</li>
+				</ul>
+				<br>
+				<label for="txt_cardcountry">country</label>
+				<br>
+				<input id="txt_cardcountry" type="text" name="country">
+				<br>
+				<button type="button" id="cont3" class="continue input_btn">continue</button>
+			</div>
+			<div class="hidden" id="4">
+				<center>
+					<span id="upArrow" class="arrow glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+				</center>
+				<div id="cartViewer" class="viewing">
+					<p>Nothing in cart</p>
+					<!-- example 
+						<div class="chkImageHold" style="float:left;" class="viewimage">
+						
+						</div>
+						<div style="float:right;" class="viewinfo">
+							<h3 id="itemName">var:name</h3>
+							<br>
+							<h3 id="itemColor">color: var:color</h3>
+							<br>
+							<h3 id="itemQnty">qty: var:qty</h3>
+							<br>
+							<h3 id="itemPrice">var:cost</h3>
+						</div> 
+					-->
+				</div>
+				<center>
+					<span id="dwnArrow" class="arrow glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+				</center>
+				<br>
+				<div class="line" style="width:75%">
+				</div>
+				<br>
+				<center>
+					<h3>total</h3>
+					<span style="display: inline;">$</span><h4 id="total"  style="display: inline;">var:total</h4>
+					<h3>tax</h3>
+					<span style="display: inline;">$</span><h4 id="tax" style="display: inline;">var:tax</h4>
+					<h3>shipping:</h3>
+					<h4 id="shipping"> Free</h4>
+				</center>
+				<button type="button" id="checkoutbtn" class="input_btn">Invest!</button>
+			</div>
+		</form>
+			<div class="container tybox hidden">
+				<center>
+					<img src="{% static 'img/icons/head.png' %}" alt="">
+					<h2 class="thank">thank you!</h2>
+				</center>
+			</div>
+		</div>
+	</center>
+</div>
+{% endblock %}
+{% block footer %}
+{% include 'mobile-nav-minimized.html' %}
+{% endblock %}

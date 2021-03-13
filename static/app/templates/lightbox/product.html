@@ -1,0 +1,20 @@
+<div class="designer-icon" style="background-image: url('{{ lightbox.data.designer.icon.url }}');">
+</div>
+<div class="socialbar">
+  <a href="#" class="tw"></a>
+  <a href="#" class="fb"></a>
+  <a href="#" class="pi"></a>
+  <a href="#" class="em"></a>
+</div>
+
+<h2>{{ lightbox.data.name }}</h2>
+<div class="slide-content">
+  <ng-include src="'e_market/carousel.html'" onload="lightboxCtrl.carousel()"></ng-include>
+
+  <div>
+    <div class="caption" ng-show="false">
+      caption: {{ lightbox.data.event.caption }}
+    </div>
+    <div class="info" ng-bind-html="lightbox.data.description"></div>
+  </div>
+</div>

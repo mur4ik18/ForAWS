@@ -1,0 +1,21 @@
+<m-circle
+  three="true"
+  ctrl="ctrl"
+  angle="4.7123889804"
+  elements="elements/galleries/articles_1.html"
+  s-angle="4.9193889804"
+  s-elements="elements/galleries/articles_2.html"
+  legend="true"
+  extra="extra/galleries/subcategory.html">
+
+  <m-circle-slides ctrl="ctrl" ng-if="ctrl.article"
+    template="galleries/slide.html"
+    on-slide-finish="ctrl.setArticle(data);"
+    on-animation-start="ctrl.animated = true;"
+    on-animation-end="ctrl.animated = false;"></m-circle-slides>
+
+  <div class="not-found" ng-if="!ctrl.article">
+    No article found.
+  </div>
+
+</m-circle>

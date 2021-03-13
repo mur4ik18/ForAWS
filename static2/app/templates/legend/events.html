@@ -1,0 +1,34 @@
+<h1 class="title">human garden</h1>
+<div ng-controller="EventSearchController as ctrl">
+
+  <div id="search">
+    <input type="text" placeholder="Search here ..."
+        ng-model="query" ng-model-options="{debounce: 500}">
+    <button type="submit" class='i'>
+      <img ng-src="{{ STATIC_URL }}img/search_w.png" alt="Search">
+    </button>
+  </div>
+
+  <div class="search-results" ng-show="query || ctrl.results">
+    <p ng-show="!ctrl.results.$resolved">Searching ...</p>
+    <ul ng-show="ctrl.results.$resolved">
+      <li ng-repeat="event in ctrl.results">
+        <a ng-href="/human-garden/event/{{ event.id }}">{{ event.title }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="date-selection" ng-class="{vh: ctrl.results}">
+    <div class="info"><strong>pick a month</strong></div>
+
+    <ul class="months">
+      <li ng-repeat="m in legend.data.MONTHS">
+        <a ng-href="/human-garden/{{ legend.data.year }}/{{ m.index }}"
+             ng-class="{active: m.index == legend.data.month.index}">
+          <img ng-src="{{ STATIC_URL }}img/icons/events/{{ m.image }}_s.svg" alt="">{{ m.image }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<year-select selected="legend.data.year"></year-select>

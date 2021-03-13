@@ -1,0 +1,58 @@
+<m-circle ctrl="ctrl"
+  angle="{{ ctrl.angle }}"
+  elements="elements/users/account.html">
+
+  <h1>billing</h1>
+
+  <form name="f">
+    <div class="form-group"
+        ng-class="{'has-error': f.fullName.$dirty && f.fullName.$invalid}">
+      <label>full name</label>
+      <input type="text" name="fullName" ng-model="ctrl.user.billing_full_name">
+    </div>
+
+    <div class="form-group"
+        ng-class="{'has-error': f.address.$dirty && f.address.$invalid}">
+      <label>address</label>
+      <input type="text" name="address" ng-model="ctrl.user.billing_address">
+    </div>
+
+    <div class="split-location">
+      <div class="form-group"
+          ng-class="{'has-error': f.city.$dirty && f.city.$invalid}">
+        <label>city</label>
+        <input type="text" name="city" ng-model="ctrl.user.billing_city">
+      </div>
+      <div class="form-group"
+          ng-class="{'has-error': f.state.$dirty && f.state.$invalid}">
+        <label>state</label>
+        <input type="text" name="state" ng-model="ctrl.user.billing_state">
+      </div>
+      <div class="form-group"
+          ng-class="{'has-error': f.zip.$dirty && f.zip.$invalid}">
+        <label>zip</label>
+        <input type="text" name="zip" ng-model="ctrl.user.billing_zip">
+      </div>
+    </div>
+    <div class="form-group"
+        ng-class="{'has-error': f.country.$dirty && f.country.$invalid}">
+      <label>country</label>
+      <mf-select name="country"  ng-model="ctrl.user.billing_country"
+        options="ctrl.countries"
+        empty="Select country">
+    </div>
+
+    <div class="text-danger" ng-show="error">{{ error }}</div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn left"
+        ng-click="ctrl.update();"
+        ng-disabled="f.$invalid || f.$pending">
+        <span ng-show="ctrl.loading">loading...</span>
+        <span ng-hide="ctrl.loading">update</span>
+      </button>
+    </div>
+  </form>
+
+</m-circle>
+

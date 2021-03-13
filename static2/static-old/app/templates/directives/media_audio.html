@@ -1,0 +1,12 @@
+<div class="audio">
+  <div class="audio-holder" ng-if="!playing" style="height: {{ height }};">
+    <div><a href ng-click="$parent.playing = true;" class="play icon-v"></a></div>
+  </div>
+  <div class="fit" ng-if="playing">
+    <div>
+      <audio controls autoplay>
+        <source ng-src="{{ link }}" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</div>

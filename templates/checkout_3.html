@@ -1,0 +1,73 @@
+{% extends "base_circle.html" %}
+
+{% block body_id %}checkout{% endblock body_id %}
+
+{% block circle_angle %}1.5707963268{% endblock circle_angle %}
+
+{% block circle_elements %}
+  <div class="r">
+    <div class="o"></div>
+    <div class="c">1</div>
+  </div>
+  <div class="r">
+    <div class="o"></div>
+    <div class="c">2</div>
+  </div>
+  <div class="r active">
+    <div class="o"></div>
+    <div class="c">3</div>
+  </div>
+  <div class="r">
+    <div class="o"></div>
+    <div class="c">4</div>
+  </div>
+{% endblock circle_elements %}
+
+
+{% block circle_content %}
+  <h1>billing</h1>
+
+  <p>payment information</p>
+
+  <form class="billing">
+    <div class="form-group">
+      <label>name on card</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>card number</label>
+      <input type="text">
+    </div>
+    <div class="split-cc">
+      <div class="form-group">
+        <label>expiration</label>
+        <div class="form-group">
+          <input type="text" placeholder="month">
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="year">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>cvv</label>
+        <input type="text">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>country</label>
+      <input type="text">
+    </div>
+
+    <p>billing address</p>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> same as shipping address
+      </label>
+    </div>
+
+    <div class="form-actions">
+      <input type="submit" class="btn" value="continue">
+    </div>
+  </form>
+{% endblock circle_content %}

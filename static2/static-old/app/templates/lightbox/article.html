@@ -1,0 +1,42 @@
+<div class="icon">
+  <i ng-class="{{ lightbox.data.month.image }}"></i>
+  {{ lightbox.data.month.image }}
+</div>
+<div class="socialbar">
+  <a href="#" class="tw"></a>
+  <a href="#" class="fb"></a>
+  <a href="#" class="pi"></a>
+  <a href="#" class="em"></a>
+</div>
+  <div class="tagbar">
+    <a href ng-repeat="tag in lightbox.data.article.tags">#{{ tag }}</a>
+  </div>
+
+<h2>{{ lightbox.data.article.title }}</h2>
+
+<div class="slide-content">
+  <div class="media" ng-class="lightbox.data.category">
+    <div ng-if="lightbox.data.category == 'see'">
+      <img ng-src="{{ lightbox.data.article.cropping }}" alt="{{ lightbox.data.article.title }}">
+    </div>
+    <div ng-if="lightbox.data.category == 'watch'">
+      <media-video link="lightbox.data.article.video" height="500px"></media-video>
+    </div>
+    <div ng-if="lightbox.data.category == 'listen'">
+      <media-audio link="lightbox.data.article.audio"></media-audio>
+    </div>
+  </div>
+  <div class="caption" ng-show="lightbox.data.article.caption">
+    {{ lightbox.data.article.caption }}
+  </div>
+
+  <div>
+    <div class="embedded-image" ng-if="lightbox.data.article.embedded_image">
+      <img ng-src="{{ lightbox.data.article.embedded_image.url }}" alt="{{ lightbox.data.article.embedded_image.alt_text }}" class="img-responsive">
+      <div class="caption" ng-show="lightbox.data.article.embedded_image">
+        {{ lightbox.data.article.embedded_image.caption }}
+      </div>
+    </div>
+    <div class="info" ng-bind-html="lightbox.data.article.content"></div>
+  </div>
+</div>

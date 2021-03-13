@@ -1,0 +1,176 @@
+{% extends "mobile-home.html" %}
+{% block content %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static "js/mostrecent.js" %}"></script>
+<script type="text/javascript" src="{% static "js/mobile-category.js" %}"></script>
+<div id="recentscroll">
+		<div id="currentsub">
+			<div id="imagehold">
+				<img width="120px" id="readimg" class="" src="{% static "img/icons/galleries/read.svg" %}">
+				<img width="120px" id="watchimg" class="hidden" src="{% static "img/icons/galleries/watch.svg" %}">
+				<img width="120px" id="listenimg" class="hidden" src="{% static "img/icons/galleries/listen.svg" %}">
+				<img width="120px" id="seeimg" class="hidden" src="{% static "img/icons/galleries/see.svg" %}">
+			</div>
+			<h1 id="currenttext" class="texthold">read</h1>
+		</div>
+	<center>
+		<div id="scrollsub" class="commonborder gray-bg">
+			<ul id="scrollbar" class="honest-ul">
+				<li id="c1" class="ico2 scrollitem hidden">
+					<a href="#">
+						<img class="gallmainimg" src="{% static "img/icons/galleries/read.svg" %}">
+						<p class="subtext">read</p>
+					</a>
+				</li>
+				<li id="c2" class="ico2 scrollitem">
+					<a href="#">
+						<img class="gallmainimg" src="{% static "img/icons/galleries/watch.svg" %}">
+						<p class="subtext">watch</p>
+					</a>
+				</li>
+				<li id="c3" class="ico2 scrollitem">
+					<a href="#">
+						<img class="gallmainimg" src="{% static "img/icons/galleries/see.svg" %}">
+						<p class="subtext">see</p>
+					</a>
+				</li>
+				<li id="c4" class="ico2 scrollitem">
+					<a href="#">
+						<img class="gallmainimg" src="{% static "img/icons/galleries/listen.svg" %}">
+						<p class="subtext">listen</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</center>
+</div>
+<!-- dropdown -->
+<div id="raindropdown" class="commonborder gray-bg">
+	<div id="dropdowncontainer">
+		<div id="rain">
+			<div id="bucket">
+				<table id="watertable">
+					<tr>
+						<td width="30%">
+						<center>
+							<div id="imageDrop" class="dropcontainer">
+								<img width="45em" id="readimg" class="" src="/static/img/icons/head_white.png">
+							</div>
+						</center>
+						</td>
+						<td width="30%">
+							<div class="dropcontainer" style="text-align:center;">
+								<span id="currentdrop" class="mediumtext">categories</span>
+							</div>
+						</td>
+						<td width="30%">
+						<center>
+							<i id="directional" class="fa fa-angle-down" aria-hidden="true"></i>
+						</center>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<center>
+		<div id="pond">
+			<table id="residents" class="honest-ul">
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span id="droptext" class="droptext text">all</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+			</table>
+		</div>
+		</center>
+	</div>
+</div>
+<!-- dropdown end -->
+<div id="stable">
+	<center>
+	<h1 class="biggertext">most recent</h1>
+	</center>
+</div>
+<div id="slideshow">
+	<div id="read" class="">
+		<!--repeat each article -->
+		<!-- <div class="readarticle hidden">
+			<div class="creditbox commonborder">
+				<center>
+					<!title here 
+					<h1 class="mediumtext">article</h1>
+					<!caption?
+					<h4 class="text">taken by:</h4>
+				</center>
+			</div>
+			<div class="contentbox bottomborder">
+				<!content
+				<p class="contenttext">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+		-->
+	</div>
+	<div id="watch" class="hidden">
+		<!-- repeat each article -->
+		<!-- <div class="watcharticle hidden">
+			<div class="creditbox commonborder">
+				<center>
+					<h1 class="mediumtext">article</h1>
+					<h4 class="text">filmed by:</h4>
+				</center>
+			</div>
+			<div class="contentbox bottomborder">
+				<div class="videocanvas">
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<div id="listen" class="hidden">
+		<!-- <div class="listenarticle hidden">
+			<div class="creditbox commonborder">
+				<center>
+					<h1 class="mediumtext">article</h1>
+					<h4 class="text">taken by:</h4>
+				</center>
+			</div>
+			<div class="contentbox bottomborder">
+				<div class="listencanvas">
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<div id="see" class="hidden">
+		<!-- <div class="seearticle hidden">
+			<div class="creditbox commonborder">
+				<center>
+					<h1 class="mediumtext">article</h1>
+					<h4 class="text">taken by:</h4>
+				</center>
+			</div>
+			<div class="contentbox bottomborder">
+				<div class="seecanvas">
+				</div>
+			</div>
+		</div> -->
+	</div>
+</div>
+{% endblock %}
+{% block footer %}
+{% include 'mobile-nav-minimized.html' %}
+{% endblock %}

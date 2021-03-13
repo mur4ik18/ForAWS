@@ -1,0 +1,48 @@
+{% extends "mobile-home.html" %}
+{% block content %}
+{% load staticfiles %}
+<center>
+	<h1 class="bigtitles">galleries</h1>
+</center>
+<div id="gallerymenu">
+	<input id="csrf" type="hidden" val= "{{ csrf_token }}">
+	<ul id="mainlist" class="honest-ul gallist">
+		<center>
+		<li id=="read" class="naver">
+			<a href="./mostrecent/#read">
+				<img width="250px" class="gallmainimg" src="{% static "img/icons/galleries/read.svg" %}">
+				<br>
+				<span class="text">read</span>
+			</a>
+		</li>
+		<br>
+		<li id="watch" class="naver">
+			<a href="./mostrecent/#watch">
+				<img width="250px" class="gallmainimg" src="{% static "img/icons/galleries/watch.svg" %}">
+				<br>
+				<span class="text">watch</span>
+			</a>
+		</li>
+		<br>
+		<li id="see" class="naver">
+			<a href="./mostrecent/#see">
+				<img width="250px" src="{% static "img/icons/galleries/see.svg" %}">
+				<br>
+				<span class="text">see</span>
+			</a>
+		</li>
+		<br>
+		<li id="listen" class="naver">
+			<a href="./mostrecent/#listen">
+				<img width="250px" src="{% static "img/icons/galleries/listen.svg" %}">
+				<br>
+				<span class="text">listen</span>
+			</a>
+		</li>
+		</center>
+	</ul>
+</div>
+{% endblock %}
+{% block footer %}
+{% include 'mobile-nav-minimized.html' %}
+{% endblock %}

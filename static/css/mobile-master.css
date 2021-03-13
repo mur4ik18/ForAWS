@@ -1,0 +1,1068 @@
+.body {
+    width: 100%;
+    height: 100%;
+    background: url(../img/dark_bg.jpg) no-repeat center;
+    background-size: cover;
+    font-family: "DIN";
+    font-size: 14px;
+    text-transform: lowercase !important;
+    font-weight: normal !important;
+    background-attachment: fixed;
+}
+
+#presentation {
+	padding-top: 140px;
+	margin-bottom: 510px;
+}
+
+.chkDrop {
+	background-color: rgba(0, 0, 0, 0);
+	width: 75%;
+	text-align: center;
+	padding: 10px;
+	border: 2px solid white;
+	padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.chkPond {
+	border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    display: none;
+}
+
+.chkDropArr {
+	float: right;
+}
+
+.creditbox {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	overflow: auto;
+}
+
+.txtHold {
+	width: 20em;
+	float: right;
+	margin-right: 25em;
+}
+
+.catImg {
+	float: left;
+}
+
+.catImg img {
+	width: 8em;
+	margin-left: 5em;
+}
+
+.slide {
+	height: 50em;
+}
+
+.conthelp {
+	background-color: black;
+	padding-bottom: 50px;
+}
+
+.footerbox {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+
+.leftarrow {
+	float:left;
+	margin-top: 4.5em;
+}
+
+.rightarrow {
+	float:right;
+	margin-top: 4.5em;
+}
+
+.media {
+	height: 100%;
+}
+
+.months tr td {
+	padding-bottom: 5em;
+}
+
+.monthlist {
+	padding-top: 3em;
+}
+
+.fullWidth{
+	width: 100%;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.centeredText {
+	text-align: center;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.bigtitles {
+	font-size: 60px;
+	margin-bottom: 50px;
+}
+
+.line {
+	border-top: 3px solid white;
+	height: 3px;
+}
+
+.gray-bg {
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+input {
+	background-color: rgba(0, 0, 0, 0);
+	width: 75%;
+	text-align: center;
+	padding: 10px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	border: 2px solid black;
+}
+
+label {
+	font-weight: normal;
+	margin-top: 10px;
+}
+
+.smallertext {
+	font-size: .5em;
+}
+
+.smalltext {
+	font-size: 1em;
+}
+
+.alttext {
+	font-size: 1.5em;
+}
+
+.text {
+	font-size: 2.5em; /**used to be 35px **/
+}
+
+.mediumtext {
+	font-size: 3em;
+}
+
+.biggertext {
+	font-size: 4em;
+}
+
+select {
+	color: black;
+	text-indent: 100px;
+}
+
+option {
+	color: black;
+	text-align: center;
+	text-indent: 100px;
+}
+
+.honest-ul {
+	padding-left: 0px;
+	padding-top: 0px;
+}
+
+.sideways li {
+	display: inline-block;
+}
+
+.maru {
+	padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 0px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.commonborder {
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+}
+
+.bottomborder {
+	border-bottom: 2px solid white;
+}
+
+/*Navigation*/
+
+.listspace{
+	margin-top: 1em;
+	margin-bottom: 3em;
+}
+
+#nav {
+	padding: 10px;
+	padding-top: 30px;
+	left: initial;
+	position: fixed;
+	height: initial;
+}
+
+#nav div {
+	background: initial;
+	height: initial;
+	background-size: initial;
+    position: initial;
+   	height: initial;
+    padding: initial;
+}
+
+#nav center {
+	position: initial;
+}
+
+.glyphicon {
+	font-size: 55px;
+}
+
+#nav .glyphicon {
+	padding-top: 30px;
+}
+
+
+#cart {
+	float: right;
+}
+
+#ham {
+	float: left;
+}
+
+.content {
+	.padding-top: 60px;
+}
+
+.redfont {
+	color: red
+}
+
+/*Navigation Menu*/
+
+#menu {
+	position: fixed;
+	top: 0;
+	left: -350px;
+	width: 350px;
+	height: 50%;
+	z-index: 100;
+	background-color: rgba(255, 255, 255, 0.9);
+	font-color: black;
+	font-size: 35px;
+}
+
+#closer {
+	float: right;
+}
+
+#menu ul {
+	padding-top: 40px;
+	padding-left: 0px;
+}
+
+#menu ul li a {
+	color: black;
+}
+
+#menu .subitem {
+	font-size: 25px;
+}
+
+.menu-line {
+	padding-top: 20px;
+	margin-bottom: 10px;
+	border-bottom: 4px solid black;
+}
+
+#hanger {
+	padding-top: 30px;
+}
+
+/*Logo rules*/
+
+.logo_gif {
+	width: 100%;
+	height: 100%;
+}
+
+/*Actions Rules*/
+
+.actions {
+	font-size: 55px;
+	overflow: auto;
+}
+
+.actions ul {
+	overflow: auto;
+	padding-left: 150px;
+	padding-right: 150px;
+	margin-bottom: 0px;
+}
+
+.test {
+	margin-top: 50px;
+	padding-top: 20px;
+	height: 400px;
+	width: 100%;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.actions span {
+	font-size: initial;
+}
+
+.pod {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+/*Social Rules*/
+
+.social {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	clear: both;
+	border-top: 4px solid white;
+}
+
+.social img {
+	height: 30px;
+	width: 30px;
+}
+
+.social ul {
+	list-style-type: none;
+}
+
+.social ul li {
+	display: inline;
+}
+
+.socialspace {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.socialspacelarge {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Mo-News Rules ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.signup {
+	color: black;
+	background: rgba(255, 255, 255, 0.7);
+	width: 100%;
+	font-size: 30px;
+	height: 100%;
+}
+
+#input_submit {
+	margin-bottom: 100px;
+}
+
+.signup input {
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	border: 2px solid black;
+}
+
+.signup textarea {
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	border: 2px solid black;
+}
+
+.signup label {
+	font-weight: normal;
+	margin-top: 10px;
+}
+
+.form_monews {
+	padding-top: 20px;
+}
+
+.input_txt {
+	padding: 10px;
+	width: 75%;
+}
+
+.input_btn {
+	width: 35%;
+	padding: 15px;
+	margin-top: 30px;
+}
+
+.title {
+	color: purple;
+	font-style: italic;
+	font-size: 50px;
+}
+
+.message {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.areamaker {
+	width: 7.5em!important;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Checkout Rules ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.checkout {
+	font-size: 30px;
+}
+
+.checkout input {
+	border: 2px solid white;
+}
+
+.checkout ul li {
+	display: inline-block;
+}
+
+.checkout ul {
+	padding-left: 0px;
+}
+
+.subtext {
+	font-size: 2em;
+	width: 100px!important;
+}
+
+
+.subtext2 {
+	font-size: 1.5em;
+}
+
+.rn {
+	width: 100%;
+}
+
+.ay {
+	margin-left:30px;
+	margin-right:30px;
+	margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.viewing {
+	width: 70%;
+	overflow: auto;
+}
+
+.viewimage {
+	padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 0px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.viewinfo {
+	margin-right: 100px;
+}
+
+#current {
+	padding-bottom: 30px;
+	font-size: 45px;
+}
+
+#holder ul {
+	list-style: none;
+	padding-left: 0px;
+}
+
+#holder ul li {
+	display: inline-block;
+}
+
+#holder button {
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 30%;
+}
+
+#holder input {
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	border: 2px solid black;
+}
+
+#holder label {
+	font-weight: normal;
+	margin-top: 10px;
+}
+
+#chk_forgot {
+	/* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  margin-right: 10px;
+}
+
+#chk_same_addr {
+	/* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  margin-right: 10px;
+}
+
+#lbl_forgot {
+	padding-top: 5px;
+}
+
+#slideshow {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#expir {
+	float: left;
+    margin-left: 150px;
+}
+
+#cvv {
+    float: right;
+    margin-right: 50px;
+}
+
+.scroller {
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.csz {
+	width: 30%;
+}
+
+.csz input {
+	width: 50%;
+	height: 30%;
+}
+
+.constrain {
+	width: 75%;
+}
+
+.continue {
+	margin-top: 50px;
+
+}
+
+.checkimage {
+	padding-left: 60px;
+	padding-right: 60px;
+	max-height: 100%;
+}
+
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Thank You ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ **/
+
+.tybox {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+#ty {
+	width: 150;
+}
+
+.thank {
+	font-size: 50px;
+}
+
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~E-market ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ **/
+
+#second {
+	overflow: auto;
+}
+
+.mw {
+	font-size: 55px;
+}
+
+.info {
+	float: right;
+	margin-right: 350px;
+}
+
+.gicon {
+	float: left;
+	margin-left: 50px;
+	margin-top: 10px;
+}
+
+.infobox {
+	margin-left: 100px;
+	overflow: auto;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.titlebox {
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;	
+	padding-bottom: 20px;
+}
+
+.marketsocial {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	clear: both;
+	border-top: 4px solid white;
+}
+
+.dressbox {
+	width: 100%;
+}
+
+.prodimage {
+	margin-top: 4em;
+}
+
+.dressprice {
+	font-size: 2.75em;
+}
+
+.imagebox {
+	background-color: black;
+	width: 100%;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	height: 500px;
+}
+
+.selector {
+	width: 75%;
+	height: 50px;
+	border: 3px solid black;
+}
+
+#options {
+	display: none;
+	width: 50%;
+	border: 2px solid black;
+}
+
+.mwchoose {
+	padding-left: 0px;
+	margin-left: 260px;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+}
+
+.ecircle {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.dropdisplay {
+	width: 60%;
+	height: 100px;
+	table-layout: fixed;
+	border: 3px solid black;
+	background-color: black;
+}
+
+.dropdisplay td {
+	table-layout: fixed;
+}
+
+.dropdisplay h2 {
+	font-size: 40px;
+}
+
+.otherbox {
+	padding-top: 30px;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+}
+
+.typeselector {
+	border-bottom: 2px solid white;
+	padding-top: 30px;
+	padding-bottom: 30px; 
+}
+
+.largertext {
+	font-size: 55px;
+}
+
+#sizes {
+}
+
+#sizes ul {
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	padding-left: 0px;
+}
+
+#sizes ul li {
+	display: inline-block;
+}
+
+#sizes h1 {
+	margin: 0px;
+	width: 2.2em;
+    height: 2em;
+    padding-top: .4em;
+}
+
+.titles {
+	margin: 0px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#maindisplay {
+	background-color: white;
+	padding-bottom: 100px;
+}
+
+.imagecontainer {
+	height:50em;
+	padding-top: 50px;
+}
+
+.tags {
+	margin-top: -100px;
+}
+
+.tags span {
+	font-size: 2em;
+}
+
+.blacktext {
+	color: black;
+}
+
+#carthold {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#recently {
+	padding-top: 50px;
+}
+
+#recently table {
+	width: 100%;
+	table-layout: fixed;
+}
+
+.recinfo {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.smallicon {
+	font-size: 3em;
+}
+/*
+.smallicon li a i {
+	font-size: 10em;
+}*/
+
+.iconspace {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.purplefont {
+	color: purple;
+}
+
+.whitefont {
+	color: white;
+}
+
+.cspace {
+	text-align-last: center;
+	height: 150px;
+	width: 150px;
+}
+
+#colorselect {
+	padding-left: 0px;
+}
+
+.cspace2 {
+	padding-top: .3em;
+	height: 30px;
+	width: 65px;
+}
+
+.ico {
+	display: inline-block;
+}
+
+.ico2 {
+	display: inline-block;
+}
+
+.maru2 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+#specs {
+	padding-bottom: 40px;
+}
+
+#qty ul{
+}
+
+#qty ul li {
+	display: inline-block;
+}
+
+#qty .cspace2 {
+	padding-top: 20px;
+	height: 100px;
+	width: 100px;
+}
+
+#qty ul li h1 {
+	margin-top: 20px;
+	padding-bottom: 100px;
+}
+
+.newWrap {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 50%;
+    border: 3px solid white;
+    width: 3em;
+    height: 3em;
+    font-size: 3em;
+}
+
+
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Gallery Rules ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ **/
+
+#gallerymenu {
+	margin-top: 20px;
+}
+
+.galmainimg {
+}
+
+.gallist {
+	display: block;
+}
+
+.gallist li {
+	padding-bottom: 30px;
+}
+
+#scrollsub {
+	padding-top: 20px;
+}
+
+.scrollitem {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#currenttext {
+	padding-top: 30px;
+	font-size: 45px;
+	width: 5em;
+	text-align: center;
+}
+
+.contentbox {
+	background-color: black;
+	min-height: 40em;
+}
+
+.contentbox p {
+	font-size: 2em;
+}
+
+#currentsub {
+	margin-left: 24em;
+    margin-right: 21em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+	overflow:auto;
+}
+
+#imagehold {
+	float:left;
+}
+
+.texthold {	
+	float:right;
+}
+
+.contenttext {
+	padding: 20px;
+	text-align: center;
+}
+
+#rain {
+	margin-top: 2em;
+	margin-left: 8.75em;
+	width: 75%;
+	border: 4px solid white;
+}
+
+#bucket {
+	overflow: auto;
+}
+
+#currentdrop {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#pond {
+	width: 75%;
+	border-left: 2px solid white;
+	border-right: 2px solid white;
+	border-bottom: 2px solid white;
+	display: none;
+}
+
+#directional {
+	font-size: 5em;
+	margin-right: 2em;
+	float: right;
+}
+
+#dropcontainer {
+	text-align: center;
+}
+
+.dropcontainer {
+	text-align: center;
+}
+
+#watertable {
+	width:100%;
+}
+
+#raindropdown {
+	padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.dropline {
+	width:25%;
+	padding-bottom: 1em;
+}
+
+.dropline img {
+	float: left;
+}
+
+.droptext {
+	text-align: center;
+}
+
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Human Garden Rules~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**/
+
+#humantitle {
+	padding-bottom: 20px;
+}
+
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Individual Rules ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**/
+
+.indidisplay {
+	background-color: white;
+}
+
+.inditags li {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.mediaholder {
+	height: 25em;
+	background-color: black;
+}
+
+.mediaholderindi {
+	height: 40em;
+	background-color: black;
+}
+
+.descriptionholder {
+	height: 70em;
+}
+
+#description {
+	overflow: scroll;
+}
+
+.indidisplay {
+	padding-top: 3em;
+}
+
+.direc {
+	position: absolute;
+	z-index:1000;
+	height:10em;
+	margin-top:16em;
+}
+#dirright {
+	float:right;
+	right:0;
+}
+
+#dirleft {
+	float:left;
+	left:0;
+}
+
+.selected {
+	background-color: purple;
+}
+
+.sc {
+	background-color: purple;
+}
+
+.ss {
+	background-color: purple;
+}

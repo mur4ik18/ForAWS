@@ -1,0 +1,103 @@
+{% load pipeline static mofa_tags %}
+<!doctype html>
+<html {% block html_attrs %}{% endblock html_attrs %} ng-strict-di>
+<head>
+  <meta charset="utf-8">
+  <title>mofa</title>
+  {% stylesheet 'master' %}
+  {% block extra_head %}{% endblock extra_head %}
+  <style>
+  {% get_current_bg as bg_timing %}
+  {% if bg_timing %}
+    body,
+    .circle .r .o {
+      background-image: url('{{ bg_timing.background_image.url }}') !important;
+    }
+  {% endif %}
+  </style>
+  <script>
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      
+      window.location.href = "http://mofamofamofa.com/mobile/";
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/static/js/individual.js"></script>
+  <link rel="icon" href="{% static "img/favicon.ico" %}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{% static "img/apps-icons/apple-icon.png" %}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static "img/apps-icons/apple-icon-144x144.png" %}" />
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static "img/apps-icons/apple-icon-76x76.png" %}" />
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static "img/apps-icons/apple-icon-152x152.png" %}" />
+  <link rel="apple-touch-icon" sizes="58x58" href="{% static "img/apps-icons/apple-icon-57x57.png" %}" />
+  <meta property="og:image" content="http://mofamofamofa.com/static/img/logo.gif" />
+  <meta property="og:title" content="Welcome to mofa" />
+<meta property="og:description" content="THE HUB OF INFORMATION AND CONNECTIVITY." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://mofamofamofa.com" />
+<meta property="fb:app_id" content="709182975924902" />
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-82495524-1', 'auto');
+ ga('send', 'pageview');
+
+</script>
+<script type="text/javascript" src="/static/js/SSUhtml5Audio.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/SSUhtml5audio.css"/>
+</head>
+<body id="{% block body_id %}{% endblock body_id %}"
+    class="{% block body_class %}{% endblock body_class %}"
+    {% block body_attrs %}{% endblock body_attrs %}>
+  <aside ng-show="loaded" ng-class="{'pull': pullMenu, 'lb-on': lightboxCtrl.show}">
+    <div class="p">
+      <div id="logo"><a href="/"><img src="{% static "img/logo.gif" %}" alt="MOFA"></a></div>
+      {% include "inc/aside_actions.html" %}
+      <a href id="pull-out" ng-click="pullMenu = true;">
+        <i class="glyphicon glyphicon-menu-hamburger hidden"></i>
+      </a>
+    </div>
+    {% include "inc/nav.html" %}
+  </aside>
+
+
+  <section id="main">
+    <div id="top" ng-show="loaded"
+        ng-class="{'lb-on': lightboxCtrl.show}">
+      <a href="/ur-account">ur account</a>
+      <div class="social">
+        <a href="http://mofaemarket.com/" target="_blank"><img src="{% static "img/footer/shop.png" %}" alt=""></a>
+        <a href="#"><img src="{% static "img/footer/twitter.png" %}" alt=""></a>
+        <a href="#"><img src="{% static "img/footer/fb.png" %}" alt=""></a>
+        <a href="#"><img src="{% static "img/footer/pinterest.png" %}" alt=""></a>
+        <a href="#"><img src="{% static "img/footer/instagram.png" %}" alt=""></a>
+        {# web: <a href="#"><img src="{% static "img/footer/web.png" %}" alt=""></a> #}
+      </div>
+    </div>
+    {% block main_content %}{% endblock main_content %}
+
+    {% block base_legend %}
+      <div class="legend">
+        {% block legend %}{% endblock legend %}
+      </div>
+    {% endblock base_legend %}
+
+    <footer ng-show="loaded"
+      ng-class="{'lb-on': lightboxCtrl.show}">
+      <div class="menu">
+        <a href="/">home</a> |
+        <a href="/p/about">about</a> |
+        <a href="/galleries">galleries</a> |
+        <a href="https://mofaemarket.com/" target="_blank">e_market</a> |
+        <a href="/human-garden">human garden</a>
+      </div>
+    </footer>
+  </section>
+
+  {% block scripts %}
+    {% javascript 'base' %}
+  {% endblock scripts %}
+</body>
+</html>

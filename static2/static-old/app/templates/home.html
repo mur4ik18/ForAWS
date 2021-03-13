@@ -1,0 +1,7 @@
+<m-circle elements="elements/home.html" ctrl="ctrl">
+  <h2 class="vm">
+    <span ng-show="ctrl.info">{{ ctrl.info|lowercase }}</span>
+    <img ng-src="{{ STATIC_URL }}img/icons/base/logo_centered.svg" alt="MOFA"
+        ng-show="!ctrl.info">
+  </h2>
+</m-circle>

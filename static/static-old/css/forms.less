@@ -1,0 +1,102 @@
+.btn {
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #fff;
+  border: 2px solid #fff;
+
+  &:hover {
+    border-color: @link-hover-color;
+    color: @link-hover-color;
+  }
+
+  .reverse & {
+    color: #4d4d4f;
+    border-color: #4d4d4f;
+
+    &:hover {
+      color: darken(#4d4d4f, 15%);
+    }
+  }
+}
+
+form {
+
+}
+
+.form-group,
+.input-group {
+  margin-bottom: 15px;
+  label {
+    display: block;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 5px 10px;
+    background: none;
+    border: 2px solid #fff;
+    outline: none;
+
+    .reverse & {
+      border-color: #4d4d4f;
+    }
+  }
+
+  &.has-error {
+    .help-block {
+      color: @brand-danger;
+      font-weight: normal;
+    }
+  }
+}
+.checkbox {
+  margin-bottom: 15px;
+
+  input {
+    vertical-align: middle
+    border: 2px solid #fff;
+    background: none;
+  }
+}
+
+.form-actions {
+  margin: 30px 0 0;
+
+  input {
+    background: none;
+  }
+}
+.placeholder(#999da1);
+
+.mf-select {
+  text-align: center;
+  // width: 100%;
+  border: 2px solid #fff;
+
+  .i {
+    padding: 10px 5% 10px 10px;
+    padding-right: 5%;
+    background: url(../img/down.png) no-repeat 95% 18px;
+    cursor: pointer;
+  }
+
+  .c,
+  .nano {
+    height: 120px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+
+    li {
+      padding: 5px 0;
+      cursor: pointer;
+
+      &:hover {
+        background: fade(#fff, 20%);
+      }
+    }
+  }
+}

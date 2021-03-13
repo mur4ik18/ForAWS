@@ -1,0 +1,50 @@
+<h1>order history</h1>
+
+<div ng-show="data.items.length > 0">
+  <div class="roller">
+    <div class="up"
+        ng-click="ctrl.rollerUp()">
+        <i class="glyphicon glyphicon-chevron-up"></i>
+    </div>
+    <div class="items">
+      <div class="item"
+          ng-repeat="item in data.items"
+          ng-if="ctrl.rollerIndex == $index">
+        <div class="clearfix">
+          <div class="img-container">
+            <img src="{{ item.stock.image.url }}" alt="{{ item.stock.image.caption }}">
+          </div>
+          <div class="details">
+            <h3>{{ item.product.name }}</h3>
+            <p>{{ item.stock.color.name }}</p>
+            <p>size: {{ item.stock.size.name }}</p>
+            <p>qty: {{ item.quantity }}</p>
+            <p class="price">${{ item.price * item.quantity | number: 2 }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="down"
+        ng-click="ctrl.rollerDown()">
+        <i class="glyphicon glyphicon-chevron-down"></i>
+    </div>
+  </div>
+  <div class="order-summary">
+    <p ng-show="data.submit_date">{{ data.submit_date | date: 'MM/dd/yyyy hh:mm' }}</p>
+    <p>${{ data.getSubtotal() | number: 2 }}</p>
+    <p class="discount" ng-show="data.voucher">
+      -${{ data.discount | number: 2 }} discount
+        (<a href
+          ng-click="ctrl.coupon = data.voucher.code; ctrl.forceCoupon = true;">change</a>)
+      coupon: {{ data.voucher.name }}
+    </p>
+    <p>tax: ${{ data.getTax() | number: 2 }}</p>
+    <p>
+      shipping: ${{ data.getShipping() | number: 2 }}<br>
+      <em>same as billing address</em>
+    </p>
+    <p class="total">${{ data.getTotal() | number: 2 }}</p>
+
+  </div>
+  </div>
+</div>

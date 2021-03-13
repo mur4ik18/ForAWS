@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main_content %}
+  <div class="lb">
+    <div class="content">
+      <a href="#" class="close"></a>
+      <div class="icon">
+        <i></i>
+        dresses
+      </div>
+      <div class="socialbar">
+        <a href="#"><img src="{% static "img/twitter.png" %}" alt=""></a>
+        <a href="#"><img src="{% static "img/facebook.png" %}" alt=""></a>
+        <a href="#"><img src="{% static "img/pinterest.png" %}" alt=""></a>
+        <a href="#"><img src="{% static "img/email.png" %}" alt=""></a>
+      </div>
+      <div class="tagbar">
+        <a href="#">#holdands</a>
+        <a href="#">#energy</a>
+        <a href="#">#flamingopark</a>
+      </div>
+
+      <h2>white razor dress</h2>
+      <div class="price">usd 200</div>
+
+      <div class="slide-content">
+        {% include "inc/lb_carousel.html" %}
+        <div>
+          <div class="caption">
+            caption: human garden invites you to hold hands. create a circle of energy, a special flow of human power
+          </div>
+          <div class="info">
+            human garden invites you to hold hands. create a circle of energy, a special flow of human power.  lorem ipsum dolor sit amet, consectetur adipiscing elit. donec fermentum pharetra aliquam. aliquam erat volutpat. etiam eu bibendum arcu. phasellus rutrum ante massa, eget tincidunt dolor varius quis. sed sed libero ullamcorper, elementum enim a, facilisis mauris. sed tristique ex nec neque mattis porttitor.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock main_content %}

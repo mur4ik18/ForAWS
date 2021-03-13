@@ -1,0 +1,19 @@
+{% extends "base_circle.html" %}
+{% load static %}
+
+{% block body_id %}about{% endblock body_id %}
+
+{% block circle_angle %}1.5707963268{% endblock circle_angle %}
+
+{% block circle_elements %}
+  <div class="r">
+    <div class="o"></div>
+    <a href="#"><img src="{% static "img/icons/base/about.svg" %}" alt=""></a>
+  </div>
+{% endblock circle_elements %}
+
+{% block circle_content %}
+  <img src="{% static "img/icons/base/logo_centered.svg" %}" alt="MOFA">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis numquam praesentium repellat quas nam expedita ipsa, tempora, sapiente rerum iure perferendis a laboriosam necessitatibus, veniam qui! Asperiores minus, modi sed porro, commodi quis laborum maiores ipsum, amet quia tempora officia.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis numquam praesentium repellat quas nam expedita ipsa, tempora, sapiente rerum iure perferendis a laboriosam necessitatibus, veniam qui! Asperiores minus, modi sed porro, commodi quis laborum maiores ipsum, amet quia tempora officia.</p>
+{% endblock circle_content %}

@@ -1,0 +1,11 @@
+<div class="r effect"
+    ng-repeat="p in ctrl.productLists[1]">
+  <div class="o"></div>
+  <div class="c1"></div><div class="c2"></div>
+  <a href class="rev designer"
+      data-toggle="tooltip" title="{{ p.name }} by {{ p.designer.name }}" data-container="body"
+      ng-class="{purple: p.id == ctrl.product.id}"
+      ng-click="ctrl.jump(p);">
+    <div class="icon" style="background-image: url('{{ p.designer.icon.url }}');"></div>
+  </a>
+</div>

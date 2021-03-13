@@ -1,0 +1,13 @@
+<div class="mf-select" ng-init="visible = false;">
+  <div class="i" ng-click="visible = !visible;">{{ selected }}</div>
+
+  <div class="c" ng-show="visible">
+    <div class="nano">
+      <div class="nano-content">
+        <ul>
+          <li ng-repeat="year in years" ng-click="setYear(year);">{{ year }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

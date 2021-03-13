@@ -1,0 +1,68 @@
+{% extends "base_circle.html" %}
+
+{% block body_id %}checkout{% endblock body_id %}
+
+{% block circle_angle %}1.5707963268{% endblock circle_angle %}
+
+{% block circle_elements %}
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="c">1</div>
+  </div>
+  <div class="r active  hvr-pop">
+    <div class="o"></div>
+    <div class="c">2</div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="c">3</div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="c">4</div>
+  </div>
+{% endblock circle_elements %}
+
+
+{% block circle_content %}
+  <h1>shipping</h1>
+
+  <form>
+    <div class="form-group">
+      <label>full name</label>
+      <input type="text">
+    </div>
+    <div class="form-group">
+      <label>address</label>
+      <input type="text">
+    </div>
+    <div class="split-location">
+      <div class="form-group">
+        <label>city</label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label>state</label>
+        <input type="text">
+      </div>
+      <div class="form-group">
+        <label>zip</label>
+        <input type="text">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>country</label>
+      <input type="text">
+    </div>
+
+    <div class="form-group">
+      <label>shipping method</label>
+      <input type="text">
+    </div>
+
+    <div class="form-actions">
+      <input type="submit" class="btn" value="continue">
+    </div>
+  </form>
+{% endblock circle_content %}

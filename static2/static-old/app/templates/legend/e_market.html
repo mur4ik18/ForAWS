@@ -1,0 +1,123 @@
+<div ng-hide="legend.data.addedItem">
+    <div class="categories">
+        <a ng-repeat="c in legend.data.categories" ng-href="/e-market/{{ c.id }}/products"
+                ng-class="{'pull-left': $index % 2 == 0, 'pull-right': $index % 2 != 0}"
+                ng-if="c.id != legend.data.category.id">
+            <img src="{{ STATIC_URL }}img/icons/e_market/{{ c.icon }}_s.svg" alt="Tops">
+            {{ c.name }}
+        </a>
+    </div>
+
+
+    <h3>
+        <img ng-src="{{ STATIC_URL }}img/icons/e_market/{{ legend.data.category.icon }}_simple.svg" alt="">
+        {{ legend.data.category.name }}
+    </h3>
+    <div ng-controller="ProductSearchController as ctrl">
+        <div id="search">
+            <input type="text" placeholder="Search here ..."
+                    ng-model="query" ng-model-options="{debounce: 500}">
+            <button type="submit" class='i'>
+                <img ng-src="{{ STATIC_URL }}img/search_w.png" alt="Search">
+            </button>
+        </div>
+
+        <div class="search-results" ng-show="query || ctrl.results">
+            <p ng-show="!ctrl.results.$resolved">Searching ...</p>
+            <ul ng-show="ctrl.results.$resolved">
+                <li ng-repeat="product in ctrl.results">
+                    <a ng-href="/e-market/{{ product.category }}/products?product={{ product.id }}">
+                        {{ product.name }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="price">usd {{ legend.data.product.price | number: 2 }}</div>
+
+    <div class="tagbar">
+        <a href ng-repeat="tag in legend.data.product.tags">#{{ tag }}</a>
+    </div>
+    <p>{{ legend.data.product.short_description }}</p>
+
+    <a href class="buy" ng-click="legend.data.addItem();">
+        <span></span>
+        i'll use this
+    </a>
+    <div ng-show="legend.data.invalidSelection" class="text-danger">
+        Please select a color and quantity
+    </div>
+
+    <div class="options">
+        <div class="t">color</div>
+        <div class="i">
+            <a href class="color"
+                    ng-repeat="color in legend.data.product.getColors()"
+                    ng-click="legend.data.setColor(color);"
+                    ng-class="{active: legend.data.product.color == color}"
+                    title="{{ color.title }}"
+                    style="background-color: {{ color.color }};"></a>
+        </div>
+    </div>
+
+    <div class="options">
+        <div class="t">body <a href="#">chart</a></div>
+
+        <div class="i">
+            <a href class="size" ng-repeat="size in legend.data.product.getSizes()"
+                    ng-click="legend.data.setSize(size);"
+                    ng-class="{active: legend.data.product.size == size}">
+                {{ size.code }}
+            </a>
+        </div>
+    </div>
+
+    <p>please select your color &amp; size</p>
+
+    <div class="options">
+        <div class="t">qty</div>
+        <div class="i">
+            <a href class="up" ng-click="legend.data.qtyUp();"></a>
+            <a href>{{ legend.data.qty }}</a>
+            <a href class="down" ng-click="legend.data.qtyDown();"></a>
+        </div>
+    </div>
+</div>
+
+<div ng-if="legend.data.addedItem" class="cart">
+    <h3>choices</h3>
+
+    <div class="roller">
+        <div class="up"
+                ng-click="legend.data.rollerUp()">
+                <i class="glyphicon glyphicon-chevron-up"></i>
+        </div>
+        <div class="items">
+            <div class="item"
+                    ng-repeat="item in legend.data.order.items"
+                    ng-if="legend.data.rollerIndex == $index">
+                <img src="{{ item.stock.image.url }}"
+                        alt="{{ item.stock.image.caption }}">
+            </div>
+        </div>
+        <div class="down"
+                ng-click="legend.data.rollerDown()">
+                <i class="glyphicon glyphicon-chevron-down"></i>
+        </div>
+    </div>
+
+    <div class="counter">
+        {{ legend.data.rollerIndex + 1 }}
+        of {{ legend.data.order.items.length }}
+    </div>
+    <div class="subtotal">
+        ${{ legend.data.order.getSubtotal(legend.data.rollerIndex) | number: 2 }}
+    </div>
+
+    <div class="options">
+        <a href="/e-market" ng-click="legend.data.hideCart()">continue shopping</a>
+        <a href="/cart">checkout</a>
+    </div>
+</div>
+

@@ -1,0 +1,223 @@
+{% extends "mobile-home.html" %}
+{% block content %}
+{% load staticfiles %}
+<div id="monthcontainer">
+	<center>
+		<h1 id="humantitle" class="bigtitles">events</h1>
+	</center>
+	<div class="monthlist">
+	<center>
+		<table class="months fullWidth">
+			<tr>
+				<td>
+				<center>
+					<a href="./mostrecent/#1">
+						<img src="{% static "img/icons/events/jan.svg" %}">
+					<br>
+						<span class="text">jan</span>
+					</a>
+				</center>
+				</td>
+				<td>
+				<center>
+					<a href="./mostrecent/#2">
+						<img src="{% static "img/icons/events/feb.svg" %}">
+					<br>
+					<span class="text">feb</span>
+					</a>
+				</center>
+				</td>
+				<td>
+				<center>
+					<a href="./mostrecent/#3">
+						<img src="{% static "img/icons/events/mar.svg" %}">
+					<br>
+						<span class="text">mar</span>
+					</a>
+				</center>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<center>
+					<a href="./mostrecent/#4">
+						<img src="{% static "img/icons/events/apr.svg" %}">
+					<br>
+						<span class="text">apr</span>
+					</a>
+				</center>
+				</td>
+				<td>
+				<center>
+					<a href="./mostrecent/#5">
+						<img src="{% static "img/icons/events/may.svg" %}">
+					<br>
+						<span class="text">may</span>
+					</a>
+				</center>
+				</td>
+				<td>
+				<center>
+					<a href="./mostrecent/#6">
+						<img src="{% static "img/icons/events/jun.svg" %}">
+					<br>
+						<span class="text">jun</span>
+					</a>
+				</center>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<center>
+					<a href="./mostrecent/#7">
+						<img src="{% static "img/icons/events/jul.svg" %}">
+					<br>
+						<span class="text">jul</span>
+					</a>
+				</center>
+				</td>
+				<td>
+				<center>
+					<a href="./mostrecent/#8">
+						<img src="{% static "img/icons/events/aug.svg" %}">
+					<br>
+						<span class="text">aug</span>
+					</a>
+				</center>
+				</td>
+				<td>
+				<center>
+					<a href="./mostrecent/#9">	
+						<img src="{% static "img/icons/events/sept.svg" %}">
+					<br>
+						<span class="text">sept</span>
+					</a>
+				</center>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<center>
+					<a href="./mostrecent/#10">
+						<img src="{% static "img/icons/events/oct.svg" %}">
+					<br>
+						<span class="text">oct</span>
+					</a>
+				</center>
+				</td>
+				<td>
+				<center>
+					<a href="./mostrecent/#11">
+						<img src="{% static "img/icons/events/nov.svg" %}">
+					<br>
+						<span class="text">nov</span>
+					</a>
+				</center>
+				</td>
+				<td>
+				<center>
+					<a href="./mostrecent/#12">
+						<img src="{% static "img/icons/events/dec.svg" %}">
+					<br>
+						<span class="text">dec</span>
+					</a>
+				</center>
+				</td>
+			</tr>
+		</table>
+	</center>
+		<!-- <ul id="months" class="honest-ul">
+			<center>
+			<li>
+				<a href="./mostrecent/#1">
+					<img src="{% static "img/icons/events/jan.svg" %}">
+					<br>
+					<span class="text">jan</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#2">
+					<img src="{% static "img/icons/events/feb.svg" %}">
+					<br>
+					<span class="text">feb</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#3">
+					<img src="{% static "img/icons/events/mar.svg" %}">
+					<br>
+					<span class="text">mar</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#4">
+					<img src="{% static "img/icons/events/apr.svg" %}">
+					<br>
+					<span class="text">apr</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#5">
+					<img src="{% static "img/icons/events/may.svg" %}">
+					<br>
+					<span class="text">may</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#6">
+					<img src="{% static "img/icons/events/jun.svg" %}">
+					<br>
+					<span class="text">jun</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#7">
+					<img src="{% static "img/icons/events/jul.svg" %}">
+					<br>
+					<span class="text">jul</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#8">
+					<img src="{% static "img/icons/events/aug.svg" %}">
+					<br>
+					<span class="text">aug</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#9">	
+					<img src="{% static "img/icons/events/sept.svg" %}">
+					<br>
+					<span class="text">sept</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#10">
+					<img src="{% static "img/icons/events/oct.svg" %}">
+					<br>
+					<span class="text">oct</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#11">
+					<img src="{% static "img/icons/events/nov.svg" %}">
+					<br>
+					<span class="text">nov</span>
+				</a>
+			</li>
+			<li>
+				<a href="./mostrecent/#12">
+					<img src="{% static "img/icons/events/dec.svg" %}">
+					<br>
+					<span class="text">dec</span>
+				</a>
+			</li>
+			</center>
+		</ul> -->
+	</div>
+</div>
+
+{% endblock %}
+{% block footer %}
+{% include 'mobile-nav-minimized.html' %}
+{% endblock %}

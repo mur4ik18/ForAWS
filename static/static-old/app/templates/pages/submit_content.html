@@ -1,0 +1,92 @@
+<m-circle
+  ctrl="ctrl"
+  class="reverse"
+  padding="100"
+  v-padding="100">
+
+  <div ng-hide="ctrl.thanks">
+    <a href class="close" ng-click="ctrl.back();"></a>
+    <div class="top">
+      <div class="contact-icon">
+        <img src="{{ STATIC_URL }}img/icons/base/reach_us_simple_gray.svg" alt="Reach Us"
+            class="icon"><br>
+        contact
+      </div>
+    </div>
+    <h1>submit content</h1>
+
+    <form name="form">
+      <div class="row">
+        <div class="form-group col-sm-8 col-sm-offset-2"
+            ng-class="{'has-error': form.fullName.$invalid && form.fullName.$dirty}">
+          <label>full name</label>
+          <input type="text" name="fullName" ng-model="ctrl.info.full_name"
+              ng-model-options="{debounce: 500}"
+              required>
+          <div class="help-block"
+              ng-messages="form.fullName.$error"
+              ng-show="form.fullName.$dirty">
+              <ng-messages-include src="error_messages.html"></ng-messages-include>
+          </div>
+        </div>
+        <div class="form-group col-sm-6"
+            ng-class="{'has-error': form.email.$invalid && form.email.$dirty}">
+          <label>email</label>
+          <input type="email" name="email" ng-model="ctrl.info.email" required>
+          <div class="help-block"
+              ng-messages="form.email.$error"
+              ng-show="form.email.$dirty"
+              ng-model-options="{debounce: 500}">
+              <ng-messages-include src="error_messages.html"></ng-messages-include>
+          </div>
+        </div>
+        <div class="form-group col-sm-6"
+            ng-class="{'has-error': form.addresses.$invalid && form.addresses.$dirty}">
+          <label>
+            web addresses:
+            <span>blog</span>
+            <span><img src="{{ STATIC_URL }}img/icons/twitter_mag.png" alt=""></span>
+            <span><img src="{{ STATIC_URL }}img/icons/facebook_mag.png" alt=""></span>
+            <span><img src="{{ STATIC_URL }}img/icons/instagram_mov.png" alt=""></span>
+          </label>
+          <input type="text" name="addresses" ng-model="ctrl.info.addresses"
+              placeholder="separated by comma">
+          <div class="help-block"
+              ng-messages="form.addresses.$error"
+              ng-show="form.addresses.$dirty"
+              ng-model-options="{debounce: 500}">
+              <ng-messages-include src="error_messages.html"></ng-messages-include>
+          </div>
+        </div>
+        <div class="form-group col-sm-8 col-sm-offset-2"
+            ng-class="{'has-error': form.about.$invalid && form.about.$dirty}">
+          <label>tell us about you</label>
+          <textarea placeholder="message with 240 character count" rows="5"
+              name="about" ng-model="ctrl.info.about" required></textarea>
+          <div class="help-block"
+              ng-messages="form.about.$error"
+              ng-show="form.about.$dirty"
+              ng-model-options="{debounce: 500}">
+              <ng-messages-include src="error_messages.html"></ng-messages-include>
+          </div>
+        </div>
+      </div>
+      <div class="form-actions bottom">
+        <button type="submit" class="btn"
+            ng-click="ctrl.submit()"
+            ng-disabled="form.$invalid || ctrl.loading">
+            <span ng-hide="ctrl.loading">reach us!</span>
+            <span ng-show="ctrl.loading">loading ...</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div ng-show="ctrl.thanks">
+    <a href class="close" ng-click="ctrl.reset();"></a>
+    <div class="news-icon">
+      <img src="{{ STATIC_URL }}img/icons/head.png" alt="">
+    </div>
+    <h2 class="vm">thank you</h2>
+  </div>
+</m-circle>

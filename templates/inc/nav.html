@@ -1,0 +1,47 @@
+{% load static %}
+<div id="nav">
+  <div>
+    <a href id="pull-in" ng-click="pullMenu = false;"></a>
+    <div class="logo">
+      <a href="/"><img src="{% static "img/logo.gif" %}" alt="MOFA"></a>
+    </div>
+    <div id="search" ng-controller="GlobalSearchController as ctrl">
+      <form>
+        <input type="text" placeholder="Search here ..." ng-model="ctrl.query">
+        <button type="submit" class='i' ng-click="ctrl.search()" ng-disabled="!ctrl.query">
+          <img src="{% static "img/nav/search_btn.png" %}" alt="Search">
+        </button>
+      </form>
+    </div>
+    <nav>
+      <ul ng-init="galleriesOn = false;">
+        <li><a href="/p/about">about</a></li>
+        <li class="submenu"
+            ng-class="{active: galleriesOn}"
+            ng-mouseenter="galleriesOn = true;"
+            ng-mouseleave="galleriesOn = false;">
+          <a href="#">
+            galleries
+          </a>
+          <div>
+            <a href="/galleries/read">read</a><br>
+            <a href="/galleries/watch">watch</a><br>
+            <a href="/galleries/see">see</a><br>
+            <a href="/galleries/listen">listen</a>
+          </div>
+        </li>
+        <li><a href="http://mofaemarket.com/" target="_blank">e_market</a></li>
+        <li><a href="/human-garden">human garden</a></li>
+      </ul>
+    </nav>
+    <div class="b">
+      <a href="/lp/delivery-shipping">privacy policy</a> |
+      <a href="/lp/returns-exchange">returns &amp; delivery</a> |
+      <a href="/lp/terms-of-use">terms of use</a>
+    </div>
+    <div class="actions-in">
+      <a href="/mo-news/sign-up"><img src="{% static "img/icons/base/mo_news.svg" %}" alt="mo_news"></a>
+      <a href="/submit-content"><img src="{% static "img/icons/base/reach_us.svg" %}" alt="reach_us"></a>
+    </div>
+  </div>
+</div>

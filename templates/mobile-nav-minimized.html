@@ -1,0 +1,30 @@
+{% block footer %}
+{% load staticfiles %}
+<div class="actions">
+	<center>
+		<ul class="gray-bg">
+		<li style="float: left;" class="pod">
+		  		<a href="/mobile/submit-content/" class="smallertext">
+		    		<img width="150" src="{% static "img/icons/base/reach_us.svg" %}" alt="reach_us">
+		  		</a>
+			</li>
+			<li style="float: right;" class="pod">
+		  		<a href="/mobile/mo-news/" class="smallertext">
+		    		<img width="150" src="{% static "img/icons/base/mo_news.svg" %}" alt="mo_news">
+		  		</a>
+			</li>
+		</ul>
+	</center>
+</div>
+<div class="social gray-bg">
+	<center>
+		<ul class="honest-ul smallicon">
+    		<li><a href="#"><i class="fa fa-twitter socialspacelarge" aria-hidden="true"></i></a></li>
+    		<li><a href="#"><i class="fa fa-facebook socialspacelarge" aria-hidden="true"></i></a></li>
+    		<li><a href="#"><i class="fa fa-pinterest-p  socialspacelarge" aria-hidden="true"></i></a></li>
+    		<li><a href="#"><i class="fa fa-instagram socialspacelarge" aria-hidden="true"></i></a></li>
+    		{# web: <li><a href="#"><img src="{% static "img/footer/web.png" %}" alt=""></a></li> #}
+    	</ul>
+	</center>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+adium-theme-ubuntu==0.3.4
+Django==1.8.13
+gyp==0.1
+PyCap==1.0
+pygobject==3.20.0
+python-apt==1.1.0b1
+requests==2.10.0
+unity-lens-photos==1.0
+virtualenv==15.0.1

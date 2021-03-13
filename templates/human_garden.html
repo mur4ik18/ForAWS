@@ -1,0 +1,63 @@
+{% extends "base_circle.html" %}
+{% load static %}
+
+{% block body_id %}human_garden{% endblock body_id %}
+
+{% block circle_angle %}4.7123889804{% endblock circle_angle %}
+
+{% block circle_elements %}
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/jan.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/feb.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/mar.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/apr.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/may.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/jun.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/jul.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/aug.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/sept.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/oct.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/nov.svg" %}" alt=""></div>
+  </div>
+  <div class="r hvr-pop">
+    <div class="o"></div>
+    <div class="rev"><img src="{% static "img/icons/events/dec.svg" %}" alt=""></div>
+  </div>
+{% endblock circle_elements %}
+
+{% block circle_content %}
+  <div class="holder">events</div>
+  <h2 id="jan" class="h">january</h2>
+  <h2 id="feb" class="h">february</h2>
+{% endblock circle_content %}

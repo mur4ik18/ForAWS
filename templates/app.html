@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load pipeline %}
+
+{% block html_attrs %}ng-app="mofa"{% endblock html_attrs %}
+
+{% block extra_head %}
+  <base href="/" >
+{% endblock extra_head %}
+
+{% block body_id %}{% verbatim %}{{ section }}{% endverbatim %}{% endblock body_id %}
+
+{% block body_attrs %}
+  ng-controller="BaseController as baseCtrl"
+{% endblock body_attrs %}
+
+{% block main_content %}
+  <div id="lightbox" class="lightbox"
+      ng-controller="LightboxController as lightbox"
+      ng-show="lightbox.show">
+    <div class="content">
+      <a href class="close" ng-click="lightbox.hide()"></a>
+      <div class="nano">
+        <div class="nano-content">
+          <ng-include src="lightbox.element" onload="lightbox.loaded()"></ng-include>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="view" ng-view ng-show="loaded"
+      ng-class="{'lb-on': lightboxCtrl.show}"></div>
+{% endblock main_content %}
+
+{% block base_legend %}
+  <div class="legend" ng-controller="LegendController as legend"
+      ng-show="legend.show && !lightboxCtrl.show">
+    <ng-include src="legend.element" onload="legend.loaded()"></ng-include>
+  </div>
+{% endblock base_legend %}
+
+{% block scripts %}
+  {% javascript 'app' %}
+  {% include "inc/app/settings.html" %}
+{% endblock scripts %}

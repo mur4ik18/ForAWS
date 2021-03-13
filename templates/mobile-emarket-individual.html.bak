@@ -1,0 +1,125 @@
+{% extends 'mobile-home.html' %}
+{% block content %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/mobile-eindividual.js' %}"></script>
+<link rel="stylesheet" type="text/css" src="{% static 'css/mobile-master.css' %}"></style>
+<div id="maindisplay">
+	<input id="csrf" type="hidden" value="{{ csrf_token }}">
+		<div class="iconshare">
+			<div class="marketsocial">
+				<center>
+					<ul class="honest-ul smallicon sideways">
+						<li class="purplefont" style="font-size: .5em; padding-bottom:10px;">share :)</li>
+        				<li><a href="#"><i class="fa fa-twitter purplefont socialspace" aria-hidden="true"></i></a></li>
+	        			<li><a href="#"><i class="fa fa-facebook socialspace purplefont" aria-hidden="true"></i></a></li>
+	        			<li><a href="#"><i class="fa fa-pinterest-p socialspace purplefont" aria-hidden="true"></i></a></li>
+	       			 	<li><a href="#"><i class="fa fa-instagram socialspace purplefont" aria-hidden="true"></i></a></li>
+	       	 			{# web: <li><a href="#"><img src="{% static "img/footer/web.png" %}" alt=""></a></li> #}
+			        </ul>
+			        <br>
+			        <br>
+       				 <ul id="tags" class="honest-ul sideways toEmpty">
+       				 	
+       				 </ul>
+    			</center>
+			</div>
+		</div>
+		<center>
+		<div class="prodinfo">
+			<!-- django inserts -->
+			<h1 id="title" class="mediumtext blacktext bold toEmpty"></h1>
+			<!-- django inserts | currency -->
+			<h1 id="price" class="mediumtext blacktext toEmpty"></h1>
+		</div>
+		<div class="imagecontainer" style="height:60em;">
+			<img id="dirleft" class="direc" src="{% static 'img/scroll_left.png' %}">
+			<img id="dirright" class="direc" src="{% static 'img/scroll_right.png' %}">
+			<ul id="imgslider" class="toEmpty honest-ul" style="height:100%;">
+			</ul>
+
+		</div>
+		</center>
+	</div>
+	<div id="carthold">
+		<center>
+			<img style="width: 30em;" id="cartadd" src="{% static 'img/cart-purple-circle.svg' %}">
+			<h1>i'll use this</h1>
+			<p>
+				<h1 id="added" style="display: none;" class="purplefont biggertext">Added to cart!</h1>
+				<h1 id="error" style="display: none;" class="redfont">Please select a size, color, and quantity</h1>
+			</p>
+		</center>
+	</div>
+	<div id="proddesc">
+		<center>
+			<p id="description" class="toEmpty" style="color:black; padding-left: 30px; padding-right: 30px; font-size: 3em;">
+			</p>
+		</center>
+	</div>
+	<div id="specs">
+		<div id="sizes">
+			<center>
+				<h1 class="titles">sizes <span id="chartOpen">chart</span></h1>
+				<div id="chart" style="display:none; height: 100%;">
+					<img style="width:100%;" src="{% static 'img/sizechart.jpg' %}">
+				</div>
+			</center>
+			<center>
+			<ul id="sizesholder" class="honest-ul toEmpty">
+				<!--example
+				<li class="ico2">
+					<div class="maru2">
+						<h1 class="size">XS</h1>
+					</div>
+				</li>
+				-->
+			</ul>
+			</center>
+		</div>
+		<div id="colorselect">
+			<center>
+				<h1 class="titles">colors</h1>
+			</center>
+			<center>
+			<ul id="colorsholder" class="honest-ul toEmpty">
+				<!--example 
+				<li class="ico2">
+					<div class="maru2">
+						<center>
+							<h4 class="">yellow</h4>
+						</center>
+					</div>
+				</li>
+				-->
+			</ul>
+			</center>
+		</div>
+		<div id="qty">
+			<center>
+				<h1 class="titles">Qty</h1>
+			</center>
+			<ul class="honest-ul">
+				<center>
+					<li id="up" class="newWrap"><i class="fa fa-angle-up" aria-hidden="true"></i></li>
+					<li class="newWrap"><span id="qtyamnt">0</span></li>
+					<li id="down" class="newWrap"><i class="fa fa-angle-down" aria-hidden="true"></i></li>
+				</center>
+			</ul>
+			<div class="container">
+				<center>
+					<h1>available: <span id="max">*select a size*</span></h1>
+				</center>
+			</div>
+		</div>
+	</div>
+	<div id="recently">
+		<table>
+			<tr id="recentrow" class="toEmpty">
+				
+			</tr>
+		</table>
+	</div>
+{% endblock %}
+{% block footer %}
+{% include 'mobile-nav-minimized.html' %}
+{% endblock %}

@@ -1,0 +1,41 @@
+<h2>
+    <span ng-show="lightbox.data.searching">
+        Searching for `{{ lightbox.data.query }}`
+    </span>
+    <span ng-hide="lightbox.data.searching">Search results for `{{ lightbox.data.query }}`</span>
+</h2>
+
+<div class="search-results">
+    <h3>Products</h3>
+    <ul>
+        <li ng-repeat="product in lightbox.data.results.products">
+            <a href="/e-market/{{ product.category }}/products?product={{ product.id }}"
+                ng-click="lightbox.hide()">{{ product.name }}</a>
+        </li>
+        <li ng-show="lightbox.data.results.products.length == 0">
+            No products found.
+        </li>
+    </ul>
+
+    <h3>Events</h3>
+    <ul>
+        <li ng-repeat="event in lightbox.data.results.events">
+            <a ng-href="/human-garden/event/{{ event.id }}"
+                ng-click="lightbox.hide()">{{ event.title }}</a>
+        </li>
+        <li ng-show="lightbox.data.results.events.length == 0">
+            No events found.
+        </li>
+    </ul>
+
+    <h3>Articles</h3>
+    <ul>
+        <li ng-repeat="article in lightbox.data.results.articles">
+            <a ng-href="/galleries/{{ article.category }}/{{ article.subcategory }}?article={{ article.id }}"
+                ng-click="lightbox.hide()">{{ article.title }}</a>
+        </li>
+        <li ng-show="lightbox.data.results.articles.length == 0">
+            No products found.
+        </li>
+    </ul>
+</div>

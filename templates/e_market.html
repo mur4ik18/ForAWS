@@ -1,0 +1,21 @@
+{% extends "base_circle.html" %}
+{% load static %}
+
+{% block body_id %}e_market_categories{% endblock body_id %}
+
+{% block circle_elements %}
+  <div class="r hvr-pop" data-hover="women">
+    <div class="o"></div>
+    <a href="#" class="icon big border hover icon-5"></a>
+  </div>
+  <div class="r hvr-pop" data-hover="men">
+    <div class="o"></div>
+    <a href="#" class="icon big border hover icon-4"></a>
+  </div>
+{% endblock circle_elements %}
+
+{% block circle_content %}
+  <div class="holder"></div>
+  <h2 id="men" class="h">men</h2>
+  <h2 id="women" class="h">women</h2>
+{% endblock circle_content %}

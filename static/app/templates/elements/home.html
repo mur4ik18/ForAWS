@@ -1,0 +1,11 @@
+<div class="r big effect" ng-repeat="page in ctrl.PAGES">
+  <div class="o"></div>
+  <div class="c1"></div>
+  <div class="c2"></div>
+  <div class="rev">
+    <a ng-href="{{ page.url }}" class="icon big border ripple icon-{{ page.icon }}"
+      ng-mouseover="ctrl.onMouseover(page);"
+      ng-mouseout="ctrl.onMouseout(page);">
+    </a>
+  </div>
+</div>

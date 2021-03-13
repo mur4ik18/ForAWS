@@ -1,0 +1,22 @@
+%!Adobe-FontList 1.13
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DINAlternate-Bold
+FamilyName:DIN Alternate
+StyleName:Bold
+FullName:DIN Alternate Bold
+MenuName:DIN Alternate
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\bogdan_projects_new\mofa\Font\DIN Alternate Bold (1).ttf
+DataFormat:sfntData
+FileLength:147024
+FileModTime:1428186739
+WeightClass:700
+WidthClass:5
+AngleClass:0
+%EndFont
+

@@ -1,0 +1,109 @@
+<div class="icon">
+  <i ng-class="{{ lightbox.data.month.image }}"></i>
+  {{ lightbox.data.month.image }}
+</div>
+<div class="socialbar">
+  <a href="#" class="tw"></a>
+  <a href="#" class="fb"></a>
+  <a href="#" class="pi"></a>
+  <a href="#" class="em"></a>
+</div>
+  <div class="tagbar">
+    <a href ng-repeat="tag in lightbox.data.article.tags">#{{ tag }}</a>
+  </div>
+
+<h2>{{ lightbox.data.article.title }}</h2>
+
+<div class="slide-content">
+    <div class="imagecontainer">
+        <img id="dirleft" class="direc" style="
+    float:left;
+    left:0; 
+    position:absolute;
+    z-index:1000;
+    height:3em;
+    margin-top:16em;" src="/static/img/scroll_left.png">
+        <img id="dirright" class="direc" style="
+    float:right;
+    right:0; 
+    position:absolute;
+    z-index:1000;
+    height:3em;
+    margin-top:16em;" src="/static/img/scroll_right.png">
+        <div id="media" style="height: 40em;">
+        <center>
+            <div class="aSlide" ng-repeat="item in lightbox.data.article.media">
+                <div class="aPanel" ng-if="$index == 0">
+                    <div ng-if="item.type == 'video'">
+                        <div ng-if="item.file">
+                            <video controls width="100%">
+                               <source src="{{ item.file }}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div ng-if="item.link">
+                            <a ng-bind-html="item.link"></a>
+                        </div>
+                    </div>
+                    <div ng-if="item.type == 'audio'">
+                        <div ng-if="item.file">
+                            <audio controls width="85%">
+                               <source src="{{ item.file }}" type="video/mp4">
+                            </audio>
+                        </div>
+                        <div ng-if="item.link">
+                            <a ng-bind-html="item.link"></a>
+                        </div>
+                    </div>
+                    <div ng-if="item.type == 'image'">
+                        <div ng-if="item.file">
+                            <img width="100%" src="{{ item.file }}">
+                        </div>
+                        <div ng-if="item.link">
+                            <img width="100%" src="{{ item.link }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="aPanel" ng-if="$index > 0" style="display:none;">
+                    <div ng-if="item.type == 'video'">
+                        <div ng-if="item.file">
+                            <video controls width="100%">
+                               <source src="{{ item.file }}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div ng-if="item.link">
+                            <a ng-bind-html="item.link"></a>
+                        </div>
+                    </div>
+                    <div ng-if="item.type == 'audio'">
+                        <div ng-if="item.file">
+                            <audio controls bottom="0" width="85%">
+                               <source src="{{ item.file }}" type="video/mp4">
+                            </audio>
+                        </div>
+                        <div ng-if="item.link">
+                            <a ng-bind-html="item.link"></a>
+                        </div>
+                    </div>
+                    <div ng-if="item.type == 'image'">
+                        <div ng-if="item.file">
+                            <img width="100%" src="{{ item.file }}">
+                        </div>
+                        <div ng-if="item.link">
+                            <img width="100%" src="{{ item.link }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+        </div>
+    </div>
+</div>
+<center>
+  <div class="caption" ng-show="lightbox.data.article.caption">
+    {{ lightbox.data.article.caption }}
+  </div>
+
+  <div>
+    <div class="info" ng-bind-html="lightbox.data.article.content"></div>
+  </div>
+</center>

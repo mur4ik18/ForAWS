@@ -1,0 +1,9 @@
+<script>
+(function () {
+  'use strict';
+
+  angular.module('mofa.settings', [])
+    .constant('STATIC_URL', '{{ STATIC_URL }}')
+    .constant('taxValue', {{ settings.TAX_VALUE }});
+})();
+</script>

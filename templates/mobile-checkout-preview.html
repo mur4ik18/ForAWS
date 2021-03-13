@@ -1,0 +1,51 @@
+{% extends "mobile-home.html" %}
+{% block content %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/mobile-cart.js' %}"></script>
+<div id="ckHead">
+<center><h1 class="biggertext in-your-cart-title">Your Cart</h1></center>
+</div>
+<div id="4">
+<center>
+	<center>
+		<span id="upArrow" class="arrow glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+	</center>
+	<div id="cartViewer" class="viewing">
+		<p>Nothing in cart</p>
+		<!-- example 
+			<div class="chkImageHold" style="float:left;" class="viewimage">
+			
+			</div>
+			<div style="float:right;" class="viewinfo">
+				<h3 id="itemName" class="mediumtext">var:name</h3>
+				<br>
+				<h3 id="itemColor" class="mediumtext">color: var:color</h3>
+				<br>
+				<h3 id="itemQnty" class="mediumtext">qty: var:qty</h3>
+				<br>
+				<h3 id="itemPrice" class="mediumtext">var:cost</h3>
+			</div> 
+		-->
+	</div>
+	<center>
+		<span id="dwnArrow" class="arrow glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+	</center>
+	<br>
+	<div class="line" style="width:75%">
+	</div>
+	<br>
+	<center>
+		<h3 class="cktext mediumtext">subtotal:</h3>
+		<span class="text" style="display: inline;">$</span><h4 id="total" class="text" style="display: inline;"></h4>
+		<!--<h3 class="cktext mediumtext">tax</h3>
+		<h4 id="tax" class="text"></h4>
+		<h3 class="cktext mediumtext">shipping</h3>
+		<h4 id="shipping" class="text"></h4>-->
+	</center>
+	<button type="button" id="checkoutbtn" class="input_btn mediumtext">checkout</button>
+</center>
+</div>
+{% endblock %}
+{% block footer %}
+{% include 'mobile-nav-minimized.html' %}
+{% endblock %}

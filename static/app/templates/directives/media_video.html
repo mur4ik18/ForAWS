@@ -1,0 +1,14 @@
+<div class="video">
+  <div class="video-holder" ng-if="!playing" style="height: {{ height }};">
+    <div><a href ng-click="$parent.playing = true;" class="play icon-v"></a></div>
+  </div>
+  <iframe
+    ng-if="playing"
+    ng-src="{{ url }}/"
+    width="100%"
+    height="{{ height }}"
+    frameborder="0"
+    webkitallowfullscreen mozallowfullscreen allowfullscreen
+    autoplay
+    id="lightbox-video-player"></iframe>
+</div>

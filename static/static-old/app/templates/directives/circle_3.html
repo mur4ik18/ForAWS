@@ -1,0 +1,29 @@
+<div class="circle first"
+    data-angle="{{ angle }}"
+    data-padding="{{ padding }}"
+    data-v-padding="{{ vPadding }}"
+    data-legend="{{ legend }}">
+
+  <ng-include src="elements" onload="recicle()"></ng-include>
+
+  <div class="circle inner" id="circle_2"
+      data-padding="{{ sPadding }}"
+      data-angle="{{ sAngle }}">
+
+    <ng-include src="sElements" onload="recircle()"></ng-include>
+
+    <div class="circle inner w"
+        id="content-circle"
+        data-padding="{{ tPadding }}"
+        data-angle="{{ tAngle }}">
+
+      <div class="content">
+        <div class="circle-container">
+          <ng-transclude></ng-transclude>
+        </div>
+      </div>
+
+      <ng-include src="extra" ng-if="extra"></ng-include>
+    </div>
+  </div>
+</div>

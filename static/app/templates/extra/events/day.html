@@ -1,0 +1,14 @@
+<a class="scroll-left"
+  ng-show="!ctrl.animated"
+  ng-if="ctrl.previous"
+  ng-click="ctrl.previousEvent()"></a>
+<a class="scroll-right"
+    ng-show="!ctrl.animated"
+    ng-if="ctrl.next"
+    ng-click="ctrl.nextEvent()"></a>
+<div class="top">
+  <div class="icon {{ ctrl.month.image }}"></div>
+</div>
+<div class="bottom" ng-if="ctrl.event">
+  <a href ng-click="ctrl.more()" class="read-more">read more &gt;</a>
+</div>

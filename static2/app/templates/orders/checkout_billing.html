@@ -1,0 +1,129 @@
+<m-circle ctrl="ctrl"
+  angle="{{ ctrl.angle }}"
+  elements="elements/orders/steps.html">
+
+  <div ng-switch="ctrl.view">
+    <div ng-switch-when="card-info">
+      <h1>billing</h1>
+
+      <div class="text-danger">{{ checkoutErr }}</div>
+
+      <form name="f" class="billing">
+        <div class="form-group"
+            ng-class="{'has-error': f.cardNumber.$dirty && f.cardNumber.$invalid}">
+          <label>card number</label>
+          <input type="text" name="cardNumber" ng-model="ctrl.order.card_number"
+            ng-pattern="/^[0-9]{16}$/i"
+            required>
+        </div>
+
+        <div class="split-cc">
+          <div class="form-group">
+            <label>expiration</label>
+            <div class="form-group"
+                ng-class="{'has-error': f.month.$dirty && f.month.$invalid}">
+              <input type="number" name="month" ng-model="ctrl.order.card_month"
+                ng-pattern="/^(0?[1-9]|1[012])$/i"
+                placeholder="month"
+                required>
+            </div>
+            <div class="form-group"
+                ng-class="{'has-error': f.month.$dirty && f.month.$invalid}">
+              <input type="number" name="month" ng-model="ctrl.order.card_year"
+                placeholder="year"
+                required>
+            </div>
+          </div>
+          <div class="form-group oup"
+              ng-class="{'has-error': f.cvv.$dirty && f.cvv.$invalid}">
+            <label>cvv</label>
+            <input type="number" name="cvv" ng-model="ctrl.order.card_cvv" maxlength="3"
+              required>
+          </div>
+        </div>
+
+        <div class="text-danger" ng-show="error">{{ error }}</div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn left"
+            ng-click="ctrl.continue();"
+            ng-disabled="f.$invalid || f.$pending">
+            <span ng-show="ctrl.loading">loading...</span>
+            <span ng-hide="ctrl.loading">continue</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div ng-switch-when="billing-address">
+      <h1>billing address</h1>
+
+      <div class="text-danger">{{ checkoutErr }}</div>
+
+      <form name="f">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="1"
+                ng-model="ctrl.order.bill_as_shipping"
+                ng-click="ctrl.billAsShippingClick()">
+            same as shipping address
+          </label>
+        </div>
+
+        <div class="form-group"
+            ng-class="{'has-error': f.fullName.$dirty && f.fullName.$invalid}">
+          <label>full name</label>
+          <input type="text" name="fullName" ng-model="ctrl.order.billing_full_name"
+            required>
+        </div>
+
+        <div class="form-group"
+            ng-class="{'has-error': f.address.$dirty && f.address.$invalid}">
+          <label>address</label>
+          <input type="text" name="address" ng-model="ctrl.order.billing_address"
+            required>
+        </div>
+
+        <div class="split-location">
+          <div class="form-group"
+              ng-class="{'has-error': f.city.$dirty && f.city.$invalid}">
+            <label>city</label>
+            <input type="text" name="city" ng-model="ctrl.order.billing_city"
+              required>
+          </div>
+          <div class="form-group"
+              ng-class="{'has-error': f.state.$dirty && f.state.$invalid}">
+            <label>state</label>
+            <input type="text" name="state" ng-model="ctrl.order.billing_state"
+              required>
+          </div>
+          <div class="form-group"
+              ng-class="{'has-error': f.zip.$dirty && f.zip.$invalid}">
+            <label>zip</label>
+            <input type="text" name="zip" ng-model="ctrl.order.billing_zip"
+              required>
+          </div>
+        </div>
+    <div class="form-group"
+        ng-class="{'has-error': f.country.$dirty && f.country.$invalid}">
+      <label>country</label>
+      <mf-select name="country"  ng-model="ctrl.order.billing_country"
+        options="ctrl.countries"
+        empty="Select country"
+        required>
+    </div>
+
+        <div class="text-danger" ng-show="error">{{ error }}</div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn left"
+            ng-click="ctrl.view = 'card-info'"
+            ng-disabled="f.$invalid || f.$pending">
+            <span ng-show="ctrl.loading">loading...</span>
+            <span ng-hide="ctrl.loading">continue</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</m-circle>

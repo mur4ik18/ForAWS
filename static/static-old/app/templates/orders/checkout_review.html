@@ -1,0 +1,68 @@
+<m-circle ctrl="ctrl"
+  angle="1.57079633"
+  elements="elements/orders/steps.html">
+
+  <div ng-hide="ctrl.complete">
+    <h1>review</h1>
+
+    <div id="view-cart">
+      <div class="roller">
+        <div class="up"
+            ng-click="ctrl.rollerUp()">
+            <i class="glyphicon glyphicon-chevron-up"></i>
+        </div>
+
+        <div class="items">
+          <div class="item"
+              ng-repeat="item in ctrl.order.items"
+              ng-if="ctrl.rollerIndex == $index">
+            <div class="clearfix">
+              <div class="img-container">
+                <img src="{{ item.stock.image.url }}" alt="{{ item.stock.image.caption }}">
+              </div>
+              <div class="details">
+                <h3>{{ item.product.name }}</h3>
+                <p>{{ item.stock.color.name }}</p>
+                <p>size: {{ item.stock.size.name }}</p>
+                <p>qty: {{ item.quantity }}</p>
+                <p class="price">${{ item.price * item.quantity | number: 2 }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="down"
+            ng-click="ctrl.rollerDown()">
+            <i class="glyphicon glyphicon-chevron-down"></i>
+        </div>
+      </div>
+
+      <div class="order-summary">
+        <p class="discount">
+          -${{ ctrl.order.discount | number: 2 }} discount
+            (<a href
+              ng-click="ctrl.coupon = ctrl.order.voucher.code; ctrl.forceCoupon = true;">change</a>)
+          coupon: {{ ctrl.order.voucher.name }}
+        </p>
+        <p>tax: ${{ ctrl.order.getTax() | number: 2 }}</p>
+        <p>
+          shipping: ${{ ctrl.order.getShipping() | number: 2 }}<br>
+          <em>same as billing address</em>
+        </p>
+        <p class="total">${{ ctrl.order.getTotal() | number: 2 }}</p>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn" ng-click="ctrl.checkout();">checkout</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div ng-show="ctrl.complete" class="thank-you">
+    <div class="news-icon">
+      <img ng-src="{{ STATIC_URL }}img/icons/head_white.png" alt="Thank you">
+    </div>
+    <h2 class="vm">thank you</h2>
+  </div>
+
+</m-circle>

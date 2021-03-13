@@ -1,0 +1,30 @@
+{% extends "base_circle.html" %}
+{% load static %}
+
+{% block body_id %}e_market{% endblock body_id %}
+
+{% block circle_elements %}
+  <div class="r" data-hover="bottoms">
+    <div class="o"></div>
+    <a href="#"><img src="{% static "img/icons/e_market/bottoms.svg" %}" alt=""></a>
+  </div>
+  <div class="r">
+    <div class="o"></div>
+    <img src="{% static "img/icons/base/e_market.svg" %}" alt="">
+  </div>
+  <div class="r" data-hover="tops">
+    <div class="o"></div>
+    <a href="#"><img src="{% static "img/icons/e_market/tops.svg" %}" alt=""></a>
+  </div>
+  <div class="r" data-hover="dresses">
+    <div class="o"></div>
+    <a href="#"><img src="{% static "img/icons/e_market/dresses.svg" %}" alt=""></a>
+  </div>
+{% endblock circle_elements %}
+
+{% block circle_content %}
+  <div class="holder">men</div>
+  <h2 id="tops" class="h">tops</h2>
+  <h2 id="bottoms" class="h">bottoms</h2>
+  <h2 id="dresses" class="h">dresses</h2>
+{% endblock circle_content %}

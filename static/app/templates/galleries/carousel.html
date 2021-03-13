@@ -1,0 +1,29 @@
+<div id="carousel-{{ lightbox.data.event.id }}"
+    class="carousel slide"
+    data-ride="carousel"
+    data-interval="false">
+  <div class="carousel-inner" role="listbox">
+    <div class="item media-{{ media.type }}"
+        ng-repeat="media in lightbox.data.event.media"
+        ng-class="{active: $first}">
+
+      <div class="img-table">
+        <div class="img-container">
+          <img ng-src="{{ media.file }}" alt="" ng-if="media.type == 'image'">
+          <media-audio ng-if="media.type == 'audio'" link="media.file"></media-audio>
+        </div>
+      </div>
+
+      <media-video link="media.link" ng-if="media.type == 'video'">
+
+      <div class="carousel-caption">Image</div>
+    </div>
+  </div>
+
+  <a class="left carousel-control"
+      href="#carousel-{{ lightbox.data.article.id }}"
+      role="button" data-slide="prev"></a>
+  <a class="right carousel-control"
+    href="#carousel-{{ lightbox.data.article.id }}"
+    role="button" data-slide="next"></a>
+</div>

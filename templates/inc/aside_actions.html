@@ -1,0 +1,19 @@
+{% load static %}
+<div class="actions" ng-init="hoverNews = false; hoverContact = false;">
+  <a href="/mo-news/sign-up/"
+      ng-mouseover="hoverNews = true;"
+      ng-mouseout="hoverNews = false;"
+      ng-class="{active: hoverNews || section == 'mo-news'}">
+     <img src="{% static "img/icons/base/reach_us.svg" %}" alt="reach_us">
+     <!--<img src="{% static "img/icons/base/mo_news.svg" %}" alt="mo_news">-->
+    <span ng-show="hoverNews || section == 'mo-news'" class="italic">mo-news</span>
+  </a>
+  <a href="/submit-content"
+      ng-mouseover="hoverContact = true;"
+      ng-mouseout="hoverContact = false;"
+      ng-class="{active: hoverContact || section == 'contact'}">
+      <img src="{% static "img/icons/base/mo_news.svg" %}" alt="mo_news">
+   <!-- <img src="{% static "img/icons/base/reach_us.svg" %}" alt="reach_us">-->
+    <span ng-show="hoverContact || section == 'contact'">submit content</span>
+  </a>
+</div>

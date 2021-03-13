@@ -1,0 +1,3 @@
+#!/home/illuminated/Mofa/mofaEnv/bin/python2
+from Cheetah.CheetahWrapper import _cheetah
+_cheetah()

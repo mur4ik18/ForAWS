@@ -1,0 +1,206 @@
+{% extends 'mobile-home.html' %}
+{% block content %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/mobile-emarket.js' %}"></script>
+<input id="csrf" type="hidden" name="csrf" value="{{ csrf_token }}">
+<div id="recentscroll">
+	<div id="currentsub">
+		<div id="imagehold">
+			<img class="" width="120px" id="womenimg" class="" src="{% static "img/icons/e_market/women.svg" %}">
+			<img class="hidden" width="120px" id="menimg" class="" src="{% static "img/icons/e_market/men.svg" %}">
+		</div>
+		<h1 id="currenttext" class="texthold">women</h1>
+	</div>
+</div>
+<center>
+	<div id="scrollsub" class="commonborder gray-bg">
+		<ul id="scrollbar" class="honest-ul">
+			<li id="c1" class="ico2 scrollitem hidden">
+				<a href="#">
+					<img class="gallmainimg" src="{% static "img/icons/e_market/women.svg" %}">
+					<p class="subtext">women</p>
+				</a>
+			</li>
+			<li id="c2" class="ico2 scrollitem">
+				<a href="#">
+					<img class="gallmainimg" src="{% static "img/icons/e_market/men.svg" %}">
+					<p class="subtext">men</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+</center>
+<!-- dropdown -->
+<div id="raindropdown" class="commonborder gray-bg">
+	<div id="dropdowncontainer">
+		<div id="rain">
+			<div id="bucket">
+				<table id="watertable">
+					<tr>
+						<td width="30%">
+						<center>
+							<div id="imageDrop" class="dropcontainer">
+							</div>
+						</center>
+						</td>
+						<td width="30%">
+							<div class="dropcontainer" style="text-align:center;">
+								<span id="currentdrop" class="mediumtext">categories</span>
+							</div>
+						</td>
+						<td width="30%">
+						<center>
+							<i id="directional" class="fa fa-angle-down" aria-hidden="true"></i>
+						</center>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<center>
+		<div id="pond">
+			<table id="residents" class="honest-ul">
+				<tr class="dropline">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img width="45em" id="readimg" class="" src="/static/img/icons/head_white.png">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span class="droptext text">all</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline m">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/e_market/tops_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span class="droptext text">tops</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<!-- insert other things here -->
+				<tr class="dropline m">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/e_market/bottoms_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span class="droptext text">bottoms</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline w">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/e_market/bottoms_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span class="droptext text">bottoms</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline w">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/e_market/dresses_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span class="droptext text">dresses</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline w">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/e_market/tops_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" class="thold" width="30%">
+						<div class="dropcontainer">
+							<span class="droptext text">tops</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<tr class="dropline w">
+					<td class="droplet" width="30%">
+						<div class="dropcontainer">
+							<img src="{% static 'img/icons/e_market/jumpsuits_s.svg'%}">
+						</div>
+					</td>
+					<td class="thold" width="30%">
+						<div class="dropcontainer">
+							<span class="droptext text">jumpsuits</span>
+						</div>
+					</td>
+					<td width="30%">
+					</td>
+				</tr>
+				<!-- old
+				<li id="9" class="droplet text dropline w"><img src="{% static 'img/icons/e_market/jumpsuits_s.svg'%}"><span class="droptext">jumpsuits</span></li> 
+				-->
+			</table>
+		</div>
+		</center>
+	</div>
+</div>
+<!-- dropdown end -->
+<div id="stable">
+	<center>
+	<h1 class="biggertext">most recent</h1>
+	</center>
+</div>
+<div id="viewshow">
+	<div id="products" class="">
+		<!--repeat each article -->
+		<!-- <div class="readarticle hidden">
+			<div class="creditbox commonborder">
+				<center>
+					<!title here 
+					<h1 class="mediumtext">article</h1>
+					<!caption?
+					<h4 class="text">taken by:</h4>
+				</center>
+			</div>
+			<div class="contentbox bottomborder">
+				<!content
+				<p class="contenttext">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+		-->
+	</div>
+</div>
+{% endblock %}
+{% block footer %}
+{% include 'mobile-nav-minimized.html' %}
+{% endblock %}

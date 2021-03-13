@@ -1,0 +1,15 @@
+<a class="scroll-left"
+  ng-show="!ctrl.animated"
+  ng-if="ctrl.previous"
+  ng-click="ctrl.previousArticle()"></a>
+<a class="scroll-right"
+    ng-show="!ctrl.animated"
+    ng-if="ctrl.next"
+    ng-click="ctrl.nextArticle()"></a>
+<div class="top">
+  <div class="icon icon-{{ ctrl.subcategory }}"></div>
+  <div>{{ ctrl.subcategory }}</div>
+</div>
+<div class="bottom" ng-if="ctrl.article">
+  <a href ng-click="ctrl.more()" class="read-more">read more &gt;</a>
+</div>
